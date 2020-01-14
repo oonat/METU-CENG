@@ -1,0 +1,188 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : Onat Özdemir \\
+Id Number : 2310399 \\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+Since p is prime and $gcd(x,p) = 1$, by using Fermat's Little Theorem,
+\begin{equation*}
+\begin{split}
+x^{p-1} \equiv 1 \ (mod \ p) 
+\end{split}
+\end{equation*}
+Since $p$ and $y$ are positive integers, by the definition,
+\begin{equation*}
+\begin{split}
+p-1 = qy + r \quad \exists q,r\in \Z \quad 0\leq r < y
+\end{split}
+\end{equation*}
+Then,
+\begin{equation*}
+\begin{split}
+x^{p-1} = x^{qy + r} = (x^{y})^{q}x^{r}
+\end{split}
+\end{equation*}
+If we prove that $r = 0$ then we can prove $ y \mid (p-1)$.\\ \\
+Since $x^{y} \equiv 1 \ (mod \ p)$ then $(x^{y})^{q} \equiv 1 \ (mod \ p)$. Moreover, since both $(x^{y})^{q} \equiv 1 \ (mod \ p)$ and 
+$x^{p-1} \equiv 1 \ (mod \ p)$ holds then we can conclude that $x^{r} \equiv 1 \ (mod \ p)$ from the equality we obtained. \\
+Since y is the smallest positive integer that satisfies $x^{y} \equiv 1 \ (mod \ p)$ and according to the definition of division $0\leq r < y$, we can conclude that $r = 0$.\\
+Thus, by the definition, $ y \mid (p-1)$.
+
+
+
+
+\section*{Answer 2}
+Let's assume that $169 \mid (2n^2+10n-7),\ \exists n\in \Z\textsuperscript{+}$, then by the definition;
+\begin{equation}
+\begin{split}
+2n^2+10n-7 = 169k \qquad \exists n\in \Z\textsuperscript{+} \quad \exists k \in \Z
+\end{split}
+\end{equation}
+If we pass $169k$ to the left side of the (1),
+\begin{equation}
+\begin{split}
+2n^2+10n-7-169k = 0 \qquad \exists n\in \Z\textsuperscript{+} \quad \exists k \in \Z
+\end{split}
+\end{equation}
+To find the $n\in \Z\textsuperscript{+}$ values that satisfy (2), we can use discriminant method since the equation in quadratic form,
+\begin{equation}
+\begin{split}
+\Delta = b^2-4ac = 10^2+8*(7+169k) = 13*(12 +8*13k) \quad k \in \Z \\
+n = \frac{-b \pm \sqrt{\Delta}}{2a} = \frac{-10 \pm \sqrt{13*(12 +8*13k)}}{4} \qquad \qquad
+\end{split}
+\end{equation}
+Since $k\in \Z$, we can conclude that $\Delta = 13*(12 +8*13k)\in \Z$. Moreover, for $\sqrt{\Delta}$ to be reel $\Delta \geq 0$ and for $\Delta = 0$ $\ n = -5/2 \notin \Z\textsuperscript{+}$, hence we can conclude that $\Delta = 13*(12 +8*13k)\in \Z\textsuperscript{+}$. \\
+Then, as can be seen from (3), for n to be an integer, $\Delta = 13*(12 +8*13k)$ must be perfect square. \\
+According to The Fundamental Theorem Of Arithmetic, since $\Delta = 13*(12 +8*13k)\in \Z\textsuperscript{+}$, $\Delta$ can be written uniquely in the form of $p_{1}*p_{2}*...p_{i}$ where $p_{i}$ is a prime number and $i\in \Z\textsuperscript{+}$.\\
+Moreover, by the definition, since $\Delta = 13*(12 +8*13k)$ must be perfect square then it can be written uniquely as $p_{1}^{2s_{1}}*p_{2}^{2s_{2}}*...p_{i}^{2s_{i}}$ where $p_{i}$ is a prime number, $i\in \Z\textsuperscript{+}$ and $s_{i} \in \Z\textsuperscript{+}$.
+Since 13 is a multiplier of $\Delta$ and is a prime number, then $13 \mid (12 +8*13k)$ must be satisfied. As can be seen that $13 \mid (8*13k)$, however since $12 \not\equiv 0 \ (mod \ 13)$, $13 \nmid 12$. Hence, $13 \nmid (12 +8*13k)$. Since there exist no $k\in \Z$ that makes $\Delta$ perfect square, there exist no arbitrarily chosen $n\in  \Z\textsuperscript{+}$ that satisfies $169 \mid (2n^2+10n-7)$. Thus, by using proof by contradiction, $169 \nmid (2n^2+10n-7),\ \forall n\in \Z\textsuperscript{+}$.
+
+
+\section*{Answer 3}
+Since $a \equiv b \ (mod \ m)$ and $a \equiv b \ (mod \ n)$, by the definition, $m \mid (a-b)$ and $n \mid (a-b)$. Then, by the definition, \\
+\begin{equation}
+\begin{split}
+ a-b = mk \qquad \exists k \in \Z
+\end{split}
+\end{equation}
+Since $n \mid (a-b)$, then $n \mid mk$. Also since given that $gcd(m,n) = 1$, $n \nmid m$ so that $n \mid k$. Thus, by the definition,\\
+\begin{equation}
+\begin{split}
+k = nt \qquad \exists t \in \Z
+\end{split}
+\end{equation}
+Therefore, by using (4) and (5) we can conclude that,
+\begin{equation}
+\begin{split}
+a-b = mnt \qquad m,n\in \Z\textsuperscript{+} \quad t\in \Z
+\end{split}
+\end{equation}
+Thus, by the definition, we can conclude from (6),
+\begin{equation*}
+\begin{split}
+a \equiv b \ (mod \ m\times n)
+\end{split}
+\end{equation*}
+
+\section*{Answer 4}
+To prove the given argument, we can use Mathematical Induction Method.\\
+Let the given argument be P(n,k).\\ \\
+\textbf{Basis Step:} Let us show that P(1,k) is true for $\forall k\in \Z\textsuperscript{+}$. For arbitrarily chosen $k\in \Z\textsuperscript{+}$; 
+\begin{equation}
+\begin{split}
+\sum_{j=1}^{n=1}j(j+1)(j+2)...(j+k-1) = 1*(1+1)*(1+2)...*(1+k-1) & \\ = 1*2*3*...*k
+\end{split}
+\end{equation}
+Moreover,
+\begin{equation}
+\begin{split}
+\frac{n(n+1)(n+2)...(n+k)}{(k+1)} = \frac{1*2*3*..*(k+1)}{k+1} = 1*2*3*...*k
+\end{split}
+\end{equation}
+From (7) and (8);
+\begin{equation*}
+\begin{split}
+\sum_{j=1}^{n=1}j(j+1)(j+2)...(j+k-1) = \frac{n(n+1)(n+2)...(n+k)}{(k+1)} = 1*2*3*...*k
+\end{split}
+\end{equation*}
+Thus we proved that P(1,k) is true $\forall k\in \Z\textsuperscript{+}$ since we proved it for an arbitrary $k \in \Z\textsuperscript{+}$. \\ \\
+\textbf{Inductive Step:} Assume that P(n,k) is true where $n,k\in \Z\textsuperscript{+}$.
+Then, let us show that P(n+1,k) is also true.
+\begin{equation}
+\begin{split}
+\sum_{j=1}^{n+1}j(j+1)(j+2)...(j+k-1) & \\ = \sum_{j=1}^{n}j(j+1)(j+2)...(j+k-1) + (n+1)*(n+2)*...*(n+1+k-1)
+\end{split}
+\end{equation}
+
+We assumed that P(n,k) is true, therefore we can write (9) as,
+\begin{equation}
+\begin{split}
+\sum_{j=1}^{n+1}j(j+1)(j+2)...(j+k-1)  = \frac{n(n+1)(n+2)...(n+k)}{(k+1)} + (n+1)*(n+2)*...*(n+1+k-1)
+\end{split}
+\end{equation}
+
+If we rearrange the right side of (10);
+
+\begin{equation}
+\begin{split}
+\sum_{j=1}^{n+1}j(j+1)(j+2)...(j+k-1)  = \frac{n(n+1)(n+2)...(n+k) + (k+1)(n+1)(n+2) ...(n+k)}{(k+1)} & \\ = \frac{(n+1)(n+2)...(n+k)(n+k+1)}{(k+1)}
+\end{split}
+\end{equation}
+
+From (11),
+\begin{equation}
+\begin{split}
+ \frac{(n+1)(n+2)...(n+k)(n+k+1)}{(k+1)} = \frac{(n+1)((n+1)+1)((n+1)+2)...((n+1)+k)}{(k+1)}
+\end{split}
+\end{equation}
+
+Thus, we proved that P(n+1,k) is also true if P(n,k) is true,  $\forall k\in \Z\textsuperscript{+}$ since we proved it for an arbitrary $k \in \Z\textsuperscript{+}$.\\
+
+In conclusion, we proved that the given statement is true for all positive integers k and n, by using mathematical induction method.
+
+\section*{Answer 5}
+
+\textbf{Basis Step:} Since for $H_{0}$ = 1, $H_{1}$ = 3, $H_{2} = 5$,
+\begin{equation*}
+\begin{split}
+H_{0} \leq 7^{0}, \qquad H_{1} \leq 7^{1}, \qquad H_{2} \leq 7^{2}
+\end{split}
+\end{equation*}
+we can take them as our base cases.\\ \\
+\textbf{Inductive Step:} Let $n \geq 3$, assume that $H_{m} \leq 7^{m}$ for all integer m's where $0 \leq m < n$. Then for $H_{n}$ by our inductive 
+hypothesis,
+\begin{equation*}
+\begin{split}
+H_{n} = 5H_{n-1} + 5H_{n-2} + 63H_{n-3} \\
+H_{n} \leq 5*7^{n-1} + 5*7^{n-2} + 63*7^{n-3}\\
+H_{n} \leq 343*7^{n-3}\\
+H_{n} \leq 7^{n}
+\end{split}
+\end{equation*}
+Thus, we have proved that $H_{n} \leq 7^{n}$ holds for all $n \geq 0$ by using strong induction method.
+
+\end{document}

@@ -1,0 +1,469 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : Onat Özdemir \\
+Id Number : 2310399 \\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+\renewcommand{\theenumi}{\alph{enumi}}
+\begin{enumerate}
+	\item
+\renewcommand{\theenumii}{\roman{enumii}}
+\begin{enumerate}
+	\item
+	\begin{equation*} 
+	\begin{split}
+	D = \{x\ | \ x \in A \ \land \ (x \in B \ \lor \ x \in C)\} & = \{x\ | \ x \in A \ \land \ x \in B \cup C\} \quad \textit{Using Definition Of Union} \\
+	& = \{x\ | \ x \in A \ \cap \  (B \cup C) \} \quad \textit{Using Definition Of Intersection} \\
+	& = A \ \cap \  (B \cup C)
+	\end{split}
+	\end{equation*}
+	
+	\item
+	\begin{equation*} 
+	\begin{split}
+	E = \{x\ | \ (\ x \in A \ \land \ x \in B) \ \lor \ x \in C\} & = \{x\ | \ \ x \in A \ \cap \ B \ \lor \ x \in C\} \ \textit{Using Defin. Of Intersection} \\
+	& = \{x\ | \ \ x \in (A \ \cap \ B) \ \cup \ C\} \quad \textit{Using Definition Of Union} \\
+	& = (A \ \cap \ B) \ \cup \ C
+	\end{split}
+	\end{equation*}
+	
+	\item
+	\begin{equation*} 
+	\begin{split}
+	F = \{x\ | \ x \in A \ \land \ (x \in B \ \rightarrow \ x \in C)\} & = (A-B) \cup (A \cap C)  \\
+	\end{split}
+	\end{equation*}
+	
+\end{enumerate}
+
+\item 
+\renewcommand{\theenumi}{\roman{enumi}}
+\begin{enumerate}
+	\item
+	We can represent the given sets as,
+	\begin{equation}
+	\begin{split}
+	(A \ \times \ B)\ \times \ C = \{ ((a,b),c) \ | \ a \in A \land b \in B \land c \in C\} \\
+	A \ \times \ (B\ \times \ C) = \{ (k,(l,m)) \ | \ k \in A \land l \in B \land m \in C\}
+	\end{split}
+	\end{equation}
+	
+	Assume that $(A \ \times \ B)\ \times \ C =  A \ \times \ (B\ \times \ C)$, then the definition of the equality of two sets implies,
+	\begin{equation}
+	\begin{split}\forall (x,y) \qquad
+	(x,y) \in (A  \times  B) \times  C \leftrightarrow (x,y) \in A  \times  (B \times C) 
+	\end{split}
+	\end{equation}
+	
+	Let $((a_{1},b_{1}),c_{1}) \in (A \ \times \ B)\ \times \ C$ then (1) implies that there exist $(k_{1},(l_{1},m_{1}))\in A \ \times \ (B\ \times \ C)$ such that $((a_{1},b_{1}),c_{1}) = (k_{1},(l_{1},m_{1}))$\\
+	
+	By the definition of equality of ordered pairs, 
+	\begin{equation*}
+	\begin{split}
+	((a_{1},b_{1}),c_{1}) = (k_{1},(l_{1},m_{1})) \quad iff \quad (a_{1},b_{1}) = k_{1} \land c_{1} = (l_{1},m_{1})
+	\end{split}
+	\end{equation*}
+	
+	For arbitrary A, B and C sets, since $k_{1} \in A$ is a single item of A and $(a_{1},b_{1}) \in A \times B$ is an ordered pair such that $a_{1}\in A \ b_{1} \in B$, $k_{1}$ can't be equal to $(a_{1},b_{1})$. Same proof also can be used to prove $c_{1} \neq (l_{1},m_{1})$.
+	
+	Since (2) is not satisfied, by contradiction, we proved that $(A \ \times \ B)\ \times \ C \neq  A \ \times \ (B\ \times \ C)$ \\
+	
+	\item
+	In order to prove or disprove given equality, we can build a membership table and check whether the result of leftern side of the equality same with the result of rightern side of the equality or not:
+	
+	\begin{table}[H]
+		\centering
+		\caption{Answer (ii)}
+		\vspace{5px}
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+			\hline
+			$A$&$B$&$C$&$(A \cap B)$&$(A \cap B)\cap C$&$(B \cap C)$&$A \cap (B \cap C)$\\ \hline
+			$1$&$1$&$1$&$1$&$1$&$1$&$1$\\ \hline
+			$1$&$1$&$0$&$1$&$0$&$0$&$0$\\ \hline
+			$1$&$0$&$1$&$0$&$0$&$0$&$0$\\ \hline
+			$1$&$0$&$0$&$0$&$0$&$0$&$0$\\ \hline
+			$0$&$1$&$1$&$0$&$0$&$1$&$0$\\ \hline
+			$0$&$1$&$0$&$0$&$0$&$0$&$0$\\ \hline
+			$0$&$0$&$1$&$0$&$0$&$0$&$0$\\ \hline
+			$0$&$0$&$0$&$0$&$0$&$0$&$0$\\ \hline
+			
+			
+		\end{tabular}
+	\end{table}  
+	
+	Since the 5th column of the table which includes the membership values of leftern side of the equation is same with the 7th column of the table which includes the membership values of rightern side of the equation, we proved that $(A \cap B)\cap C = A \cap (B \cap C)$ .
+	
+	\item 
+	
+	By using the given definition of "symmetric difference", in order to prove or disprove given equality, we can build a membership table and check whether the result of leftern side of the equality same with the result of rightern side of the equality or not:
+	
+	\begin{table}[H]
+		\centering
+		\caption{Answer (iii)}
+		\vspace{5px}
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+			\hline
+			$A$&$B$&$C$&$(A \oplus B)$&$(A \oplus B)\oplus C$&$(B \oplus C)$&$A \oplus (B \oplus C)$\\ \hline
+			$1$&$1$&$1$&$0$&$1$&$0$&$1$\\ \hline
+			$1$&$1$&$0$&$0$&$0$&$1$&$0$\\ \hline
+			$1$&$0$&$1$&$1$&$0$&$1$&$0$\\ \hline
+			$1$&$0$&$0$&$1$&$1$&$0$&$1$\\ \hline
+			$0$&$1$&$1$&$1$&$0$&$0$&$0$\\ \hline
+			$0$&$1$&$0$&$1$&$1$&$1$&$1$\\ \hline
+			$0$&$0$&$1$&$0$&$1$&$1$&$1$\\ \hline
+			$0$&$0$&$0$&$0$&$0$&$0$&$0$\\ \hline
+			
+			
+		\end{tabular}
+	\end{table}  
+	
+	Since the 5th column of the table which includes the membership values of leftern side of the equation is same with the 7th column of the table which includes the membership values of rightern side of the equation, we proved that $(A \oplus B)\oplus C = A \oplus (B \oplus C)$ .
+	
+\end{enumerate}
+
+\end{enumerate}
+
+\section*{Answer 2}
+\begin{enumerate}
+	\item 
+	We can divide the question into two parts.For the first part, inorder to prove $A_{0} \subseteq f^{-1}(f(A_{0}))$, we should show that for an arbitrarily chosen $x \in A_{0}$, x is also an element of $f^{-1}(f(A_{0}))$. For the second part, if we are able to show $f^{-1}(f(A_{0})) \subseteq A_{0}$ and $A_{0} \subseteq f^{-1}(f(A_{0}))$ where we assume f is an injective function then, by the definition,we can prove that $A_{0} = f^{-1}(f(A_{0}))$ holds for injective f function.
+	\renewcommand{\theenumii}{\roman{enumii}}
+	\begin{enumerate}
+		\item 
+		Let x be an arbitrarily chosen element of $A_{0}$. Then, $f(x) \in f(A_{0})$. By using the given definition of $f^{-1}$, we can conclude that $x \in f^{-1}(f(A_{0}))$. Thus, we proved that
+		$A_{0} \subseteq f^{-1}(f(A_{0}))$.
+		\item
+		Let x be an arbitrarily chosen element of $f^{-1}(f(A_{0}))$. Then, by using the given definition of $f^{-1}$, we can conclude that $f(x) \in f(A_{0})$. Let k be an arbitrarily chosen element of $A_{0}$ such that $f(k) = f(x)$. If f is an injective function, then by the definition, $x = k$ so that $x \in A_{0}$. Hence, by the definition, $f^{-1}(f(A_{0})) \subseteq A_{0}$. Since we proved both $A_{0} \subseteq f^{-1}(f(A_{0}))$ and $f^{-1}(f(A_{0})) \subseteq A_{0}$, by the definition, we can conclude that $f^{-1}(f(A_{0})) = A_{0}$ holds if f is an injective function.
+	\end{enumerate}
+	
+	\item
+	We can divide the question into two parts.For the first part, inorder to prove $f(f^{-1}(B_{0})) \subseteq B_{0}$, we should show that for an arbitrarily chosen $y \in f(f^{-1}(B_{0}))$, y is also an element of $B_{0}$. For the second part, if we are able to show $B_{0} \subseteq f(f^{-1}(B_{0}))$ and $f(f^{-1}(B_{0})) \subseteq B_{0}$ where we assume f is an injective function then, by the definition, we can prove that $f(f^{-1}(B_{0})) = B_{0}$ holds for surjective f function.
+	\renewcommand{\theenumii}{\roman{enumii}}
+	\begin{enumerate}
+		\item 
+		Let y be an arbitrarily chosen element of $f(f^{-1}(B_{0}))$, then $y = f(x)$ for an arbitrarily chosen element of $f^{-1}(B_{0})$. By the given definition of $f^{-1}$, we can conclude that $f(x) \in B_{0}$ so that $y \in B_{0}$. Thus, we proved that $f(f^{-1}(B_{0})) \subseteq B_{0}$.
+		
+		\item
+		Let y be an arbitrarily chosen element of $B_{0}$. If f is a surjective function then by the definition, there exists $x \in A$ such that $y = f(x)$. Then, $f(x)\in B_{0}$ so that by the given definition, $x \in f^{-1}(B_{0})$. Hence, $y \in f(f^{-1}(B_{0}))$. By the definition, we proved that $B_{0} \subseteq f(f^{-1}(B_{0}))$. Since we proved both $B_{0} \subseteq f(f^{-1}(B_{0}))$ and $f(f^{-1}(B_{0})) \subseteq B_{0}$, by the definition, we can conclude that $f(f^{-1}(B_{0})) = B_{0}$ holds if f is an surjective function.
+	\end{enumerate}
+	
+\end{enumerate}
+
+
+\section*{Answer 3}
+\begin{enumerate}
+	\item
+	Proof of $1 \implies 2$, \\
+	Let A be a non-empty countable set. Then by the definition of countability, A is either a finite set or there exist a f function such that $f: \Z\textsuperscript{+} \rightarrow A$ where f is bijective. In order to prove $1 \implies 2$, we should check both cases.
+	\renewcommand{\theenumii}{\roman{enumii}}
+	\begin{enumerate}
+	\item
+	If A is a finite set, let the cardinality of A be $n \in \Z\textsuperscript{+}$. Then we can find an arbitrary g function such that $g: \{1,2,3...n\} \rightarrow A$ where g is a bijective function.\\
+	Let f be a function such that $f: \Z\textsuperscript{+} \rightarrow A$ where 
+	
+	\[ f(x) = \begin{cases} 
+	g(x) & 1\leq x \leq n \\
+	s_{0} & x > n
+	\end{cases}
+	\] 
+	
+	For the f function $x \in \Z\textsuperscript{+}$ and $s_{0}$ is an arbitrary item of A.\\
+	Since g(x) is a bijective function, we guarantee that for $\forall s \in A$ there exist an $x \in \Z\textsuperscript{+}$ such that f(x) = s. Therefore, for an arbitrary finite set A, we proved that there exist an f function such that $f: \Z\textsuperscript{+} \rightarrow A$ where f is surjective. Thus, $1 \implies 2$ is proven.
+	
+	\item
+	If A is an infinite countable set, then there exist an f function such that $f: \Z\textsuperscript{+} \rightarrow A$ where f is bijective. Definition of bijection implies that f is a bijective function if and only if f is both surjective and injective function for the given domain. Therefore, for an arbitrary infinite countable set A, we showed that the countability of A guarantees the existence of an arbitrary f function such that 
+    $f: \Z\textsuperscript{+} \rightarrow A$ where f is surjective. Thus, we proved $1 \implies 2$.
+	
+	 
+    \end{enumerate}
+	By checking the both cases, we reached to same conclusions. Thus, $1 \implies 2$ is proven.
+	
+	\item 
+	Proof of $2 \implies 3$,\\
+	Suppose we have an surjective g function such that $g:\Z\textsuperscript{+}\rightarrow A$. Let f be a function such that $f:A\rightarrow\Z\textsuperscript{+}$ where,
+	\begin{equation*}
+	\begin{split}
+    f(a) = b,  \qquad \forall a \in A,
+	\end{split}
+	\end{equation*}
+	for this function note that b is an arbitrarily chosen element of the set $S = \{ x \ | \ g(x) = a\}$ which is not empty since g is a surjective function. Therefore, f is a well defined function. Moreover, if f(a) = f(t) for an arbitrarily chosen $a,t \in A$, then by construction, $a = g(f(a)) = g(f(t)) = t$. Hence, f is an injective function. Thus, we proved that $2 \implies 3$.
+
+    \item
+    Proof of $3 \implies 1$,\\
+    Let A be a nonempty set. Then, A is either a finite set or infinite set. In order to prove our claim we should check both cases.
+    \renewcommand{\theenumii}{\roman{enumii}}
+    \begin{enumerate}
+    	\item
+    	If A is a nonempty finite set, then by the definition of countability, A is a countable set.
+    	
+    	\item
+    	If A is an infinite set and there is an injective f function such that $f: A \rightarrow \Z\textsuperscript{+}$, then let S be a set such that $S = f(A) \subseteq \Z\textsuperscript{+}$. Since f is injective and A is infinite then we can conlude that S is infinite. In addition, since $S \subseteq \Z\textsuperscript{+}$, we can write S as,
+    	\begin{equation*}
+    	\begin{split}
+    	S = \{s_{1},s_{2},s_{3}...\} \quad where \ s_{1} = min(S), s_{2} = min(S/\{s_{1}\}), s_{3} = min(S/\{s_{1},s_{2}\}) ...
+    	\end{split}
+    	\end{equation*}
+    	Since we are able to find an enumarated list for S where we can reach each element of S in a finite step, we can conclude that S is a countably infinite set. Then, by the definition of countability, cardinality of S is equal to cardinality of 	$\Z\textsuperscript{+}$.\\
+    	We defined S as $S = f(A)$, then $f:A\rightarrow S$ is a surjective function. Moreover, we know that $f: A \rightarrow \Z\textsuperscript{+}$ is an injective function, then $f: A \rightarrow S$ is also an injective function. Since $f: A \rightarrow S$ is both injective and surjective function, by the definition, $f: A \rightarrow S$ is also a bijective function. Hence, by the definition, cardinality of A is equal to cardinality of S. Moreover, in the previous part we proved that the cardinality of S is equal to cardinality of $\Z\textsuperscript{+}$, so we can conclude that the cardinality of A is equal to $\Z\textsuperscript{+}$. Thus, by the definition, we proved that A is countable.
+    	
+    	
+    \end{enumerate}
+    By checking the both cases, we reached to same conclusions. Thus, $3 \implies 1$ is proven.
+    
+\end{enumerate}
+
+In conclusion, by proving $1 \implies 2$, $2 \implies 3$, $3 \implies 1$, we showed that given arguments are equivalent.
+
+\section*{Answer 4}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+\begin{enumerate}
+	
+\item
+Let M be the set of finite binary strings. We can denote a subset of M which contains finite binary strings with n length as $M_{n}$. Each element of $M_{n}$ can be represented as,
+ \begin{equation*}
+ \begin{split}
+ s_{k} = a_{k1}a_{k2}a_{k3}a_{k4}a_{k5}a_{k6}...a_{ki}...a_{kn}
+ \qquad a_{ki} \in \{0,1\} \qquad s_{k}\in M_{n}
+ \end{split}
+ \end{equation*}
+
+Since each $a_{ki}$ has two possible values which are 0 and 1, and $s_{n}$ contains n digits, the cardinality of $M_{n}$ equals to $2^n$ which denotes that arbitrary $M_{n}$ set is finite.Thus, by the definition of the countability, $M_{n}$ is also countable.
+
+We can represent M as the unions of infinitely many countable sets such that,
+\begin{equation}
+\begin{split}
+M = M_{1}\cup M_{2}\cup M_{3}\cup M_{4}\cup M_{5}...\cup M_{n}... \qquad n \in \Z\textsuperscript{+}
+\end{split}
+\end{equation}
+
+As can be seen, for $\forall M_{n} \in M$, we can match each $M_{n}$ to $n \in \Z\textsuperscript{+}$ with 1-to-1 correspondence. Thus, the number of subsets we use to build M in (3) is countably infinite.
+
+\textbf{Proof of Lemma 1},\\
+By the definition, if there exist a f function such that $f:\Z\textsuperscript{+}\times\Z\textsuperscript{+}\rightarrow \Z\textsuperscript{+}$ where f is an injective function, then we can justify that $\Z\textsuperscript{+}\times\Z\textsuperscript{+}$ is a countable set. Let f be defined as,
+\begin{equation*}
+\begin{split}
+f(x,y) = 2^{x}*3^{y}   \qquad  x,y\in \Z\textsuperscript{+}
+\end{split}
+\end{equation*}
+Assume that $a \neq b$, $c \neq d$ and $f(a,c) = f(b,d)=2^{a}*3^{c}=2^{b}*3^{d}$\\
+By the uniqueness of the factorization a must be equal to b and c must be equal to d. Therefore f function is injective in the given domain. Thus, $\Z\textsuperscript{+}\times\Z\textsuperscript{+}$ is a countable set.
+
+\textbf{Proof of Lemma 2},\\
+Let S be the set of unions of all $A_{i}$'s where $A_{i}$ is a countable set for $i \in \Z\textsuperscript{+}$.Without loss of gerenality, we can assume that for an arbitrary $a,b \in \Z\textsuperscript{+}$, $A_{a}$ and $A_{b}$ are disjoint sets.(if they are not, we can replace $A_{b}$ by $A_{b}-A_{a}$, because $A_{a}\cap(A_{b}-A_{a}) = \emptyset$ and $A_{a}\cup (A_{b}-A_{a}) = A_{a} \cup A_{b}$. We can represent S as,\\
+\begin{equation*}
+\begin{split}
+S = \bigcup\nolimits_{i\in \Z\textsuperscript{+}} A_{i}
+\end{split}
+\end{equation*}
+By the definition, since each $A_{i}$ is countable there exist surjective functions for each $A_{i}$ such that,\\
+\begin{equation*}
+\begin{split}
+f_{i}: \Z\textsuperscript{+} \rightarrow A_{i}
+\end{split}
+\end{equation*}
+We can define a F function such that,
+\begin{equation*}
+\begin{split}
+F: \Z\textsuperscript{+}\times\Z\textsuperscript{+}\rightarrow S	\qquad \qquad \\
+F: (i,x) \rightarrow f_{i}(x) \qquad i,x\in \Z\textsuperscript{+}
+\end{split}
+\end{equation*}
+Since each $A_{i}$ can be mapped to $i\in \Z\textsuperscript{+}$ with one to one correspondence -which means by the definition, the set of all $A_{i}$'s is countably infinite- and by the definition of countability each $f_{i}$ is a surjective function from $\Z\textsuperscript{+}$ to $A_{i}$, we can justify that F is a surjective function from $\Z\textsuperscript{+}\times\Z\textsuperscript{+}$ to $S$. By Lemma 1, we know that $\Z\textsuperscript{+}\times\Z\textsuperscript{+}$ is a countable set and we proved that there exist a F function from a countable set to S where F is surjective. Thus, by the definition of countability, unions of countably many countable sets is also countable.
+
+
+Since the unions of countably many countable sets is countable by Lemma 2, we proved that M is countable.
+
+
+\item
+Let S be the set of infinite binary strings. Then every $s_n \in S$ can be represented as;
+\begin{equation*}
+\begin{split}
+s_n = a_{n1}a_{n2}a_{n3}a_{n4}a_{n5}a_{n6}...a_{ni}... \qquad a_{ni} \in \{0,1\}
+\end{split}
+\end{equation*}
+Assume that S is countable. Then by the definition of the countability, every $s_n \in S$ should be able to matched to $n_k \in \Z\textsuperscript{+} $ with 1-to-1 correspondence;
+
+
+
+\begin{table}[H]
+	\caption{}
+	\label{table1}
+	\begin{center}
+		\begin{tabular}{ c | c }
+			 $n_1$ & $s_1 = \boldsymbol{a_{11}}a_{12}a_{13}a_{14}a_{15}a_{16}...a_{1i}...$  \\
+			 $n_2$ & $s_2 = a_{21}\boldsymbol{a_{22}}a_{23}a_{24}a_{25}a_{26}...a_{2i}...$  \\
+			 $n_3$ & $s_3 = a_{31}a_{32}\boldsymbol{a_{33}}a_{34}a_{35}a_{36}...a_{3i}...$  \\
+			 $n_4$ & $s_4 = a_{41}a_{42}a_{43}\boldsymbol{a_{44}}a_{45}a_{46}...a_{4i}...$  \\
+			 $n_5$ & $s_5 = a_{51}a_{52}a_{53}a_{54}\boldsymbol{a_{55}}a_{56}...a_{5i}...$  \\
+			 $n_6$ & $s_6 = a_{61}a_{62}a_{63}a_{64}a_{65}\boldsymbol{a_{66}}...a_{6i}...$  \\
+			 $.$ & $.$ \\
+			 $n_k$ & $s_n = a_{n1}a_{n2}a_{n3}a_{n4}a_{n5}...\boldsymbol{a_{nn}}...a_{ni}...$  \\
+			 $.$ & $.$ \\
+			 $.$ & $.$ \\
+			 $.$ & $.$ \\
+		\end{tabular}
+	\end{center}
+\end{table}
+
+Let $s_x \in S$ and $s_x = c_{1}c_{2}c_{3}c_{4}c_{5}c_{6}...c_{i}...$ where
+
+\[ c_{i} = \begin{cases} 
+1 & a_{ii} = 0 \\
+0 & a_{ii} = 1
+\end{cases}
+\]
+
+As can be seen, the infinite binary string $s_x$ that is constructed by choosing $i$-th digit of it as the complementary of $a_{ii}$ differs from each $s_{n} \in S$ that is matched with unique $n_{k}$ in terms of the $n$-th digit. Therefore, for every enumeration at least one $s_x \in S$ that is not placed in enumeration table (Table 3) can be constructed. By using the proof by contradiction, S is uncountable.
+
+\end{enumerate}
+
+\section*{Answer 5}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+\begin{enumerate}
+	
+	\item
+    By the definition, 
+	\begin{equation*}
+	\begin{split}
+	  logn! = \Theta(nlogn) \quad iff \quad logn! = O(nlogn) \quad and \quad logn! = \Omega(nlogn)
+	\end{split}
+	\end{equation*}
+
+	Therefore, inorder to prove $logn! = \Theta(nlogn)$, both $ logn! = O(nlogn)$ and $ logn! = \Omega(nlogn)$ must be proven.
+	
+	\renewcommand{\theenumii}{\roman{enumii}}
+	\begin{enumerate}
+	 \item
+	 $ logn! = O(nlogn)$ implies,
+	 \begin{equation}
+	 \begin{split}
+	 logn! \leq c_1.(nlogn)   \quad \quad \exists c_1>0,\ \exists n_0, \ \forall n \geq n_0
+	 \end{split}
+	 \end{equation}
+	 
+	 Expand $logn!$ as,
+	 \begin{equation}
+	 \begin{split}
+	 logn! = log1 + log2 + log3 + log4 + ... + logn
+	 \end{split}
+	 \end{equation}
+	 Since $logn \geq logk$  $\quad n \geq k>0$, for each term of the left side add $logn$ to the right side of the inequality
+	 \begin{equation*}
+	 \begin{split}
+	  log1 + log2 + log3 + log4 + ... + logn \leq logn + logn + logn + logn +...+ logn\\
+	  log1 + log2 + log3 + log4 + ... + logn \leq n.logn \quad \quad \quad \quad \quad \quad
+	 \end{split}
+	 \end{equation*}
+	 From (5),
+	 \begin{equation}
+	 \begin{split}
+	 logn! \leq nlogn \\
+	 \end{split}
+	 \end{equation}
+	 As can be seen from (6), for $c_1 = 1$ and $n_0 = 1$,  inequality (4) is satisfied for $\forall n \geq 1$. Thus, $ logn! = O(nlogn)$ is proven.\\
+	 
+	 
+	 
+	 \item
+	 $ logn! = \Omega(nlogn)$ implies,
+	 \begin{equation}
+	 \begin{split}
+	 logn! \geq c_2.(nlogn)   \quad \quad \exists c_2>0,\ \exists k_0, \ \forall n \geq k_0
+	 \end{split}
+	 \end{equation}
+	  Expand $logn!$ as,
+	 \begin{equation}
+	 \begin{split}
+	 logn! = log1 + log2 + log3 + log4 + ... + logn
+	 \end{split}
+	 \end{equation}
+	 By dividing the (8) into two summation from log(n/2), we get
+	 \begin{equation}
+	 \begin{split}
+	 T = log1 + log2 + log3 + ... + log(n/2)\\
+	 Y = log(n/2+1) + ... + log(n-1) + logn\\
+	 logn! = T + Y \qquad \qquad \qquad
+	 \end{split}
+	 \end{equation}
+	 For T we get from (9), since each term of T is greater than or equal to log1,
+	 \begin{equation}
+	 \begin{split}
+	 T \geq log1 + log1 + log1 + ... + log1 \\
+	 T \geq 0 + 0 + 0 + ... + 0 \qquad \\
+	 T \geq 0 \qquad \qquad \qquad 
+	 \end{split}
+	 \end{equation} 
+	 For Y we get from (9), since each term of Y is greater than or equal to log(n/2),
+	 \begin{equation}
+	 \begin{split}
+	 Y \geq log(n/2) + log(n/2) + log(n/2) + ... + log(n/2) \\
+	 Y \geq (n/2).log(n/2) \qquad \qquad \qquad
+	 \end{split}
+	 \end{equation} 
+	 If we combine (10) and (11),
+	 \begin{equation}
+	 \begin{split}
+	 logn! = T + Y \geq 0 + (n/2)log(n/2)\\
+	 logn! \geq (n/2)(log(n) - log2) \qquad 
+	 \end{split}
+	 \end{equation} 
+	 As can be seen from (12), for $c_2 = 1/2$ and $k_0 = 1$,  inequality (4) is satisfied for $\forall n \geq 1$. Thus, $ logn! = \Omega(nlogn)$ is proven.\\
+	 \end{enumerate}
+ 
+     Since both $ logn! = O(nlogn)$ and $ logn! = \Omega(nlogn)$ have been proved, by the definition of $\Theta$, $logn! = \Theta(nlogn)$ is proved.
+		
+	
+	\item
+    Assume that n! is growing faster than $2^n$. In order to prove our assumption we should observe the behaviour of,
+    \begin{equation}
+    \begin{split}
+    \sum_{n=1}^{\infty}\frac{n!}{2^n}
+    \end{split}
+    \end{equation} 
+    Since for $n\geq1$, \ $\sum_{n=1}^{\infty}\frac{n!}{2^n}>0$, we can apply ratio test to observe the behaviour of the series.\\
+    Define L as,
+    \begin{equation}
+    \begin{split}
+    L = \lim_{n\to\infty}{|\frac{\frac{(n+1)!}{2^{n+1}}}{\frac{n!}{2^n}}|}\\ \\
+    =\lim_{n\to\infty}{|\frac{2^n*(n+1)!}{2^{n+1}*n!}|} \\ \\
+    =\lim_{n\to\infty}{|\frac{(n+1)!}{2*n!}|} \\ \\
+    =\lim_{n\to\infty}{|\frac{n+1}{2}|} \\ \\
+    = \infty
+    \end{split}
+    \end{equation} 
+    (14) shows us that $L > 1$. By using the Ratio Test, we can conclude that the series we get from (13) diverges to $\infty$ for the large values of n. \\ 
+    This result shows us that the nominator of $\frac{n!}{2^n}$ grows faster than the denominator for the large values of n.\\
+    Thus, we proved that $n!$ grows faster than $2^n$.
+	
+	
+	
+	
+
+\end{enumerate}
+
+
+\end{document}

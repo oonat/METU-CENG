@@ -1,0 +1,407 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+\usepackage{indentfirst}
+\usepackage{amsfonts}
+
+\begin{document}
+
+\section*{Student Information}
+
+Name : Onat Özdemir\\
+
+ID : 2310399 \\
+
+
+\section*{Answer 1}
+\subsection*{a)} Let K be an experiment which can be described as selecting a box and picking a random ball from the selected box. Additionally, let's we represent the balls in X as, 
+\begin{equation*} 
+\begin{split}
+X = \{X_{red1},X_{red2},X_{green1},X_{green2},X_{blue1},X_{blue2}\}
+\end{split}
+\end{equation*}
+and in Y as \\
+\begin{equation*} 
+\begin{split}
+Y = \{Y_{red},Y_{green1},Y_{green2},Y_{blue1},Y_{blue2}\}
+\end{split}
+\end{equation*}
+Then the sample space of K,
+\begin{equation*} 
+\begin{split}
+\Omega = \{(X,X_{red1}),(X,X_{red2}),(X,X_{green1}),(X,X_{green2}),(X,X_{blue1}),(X,X_{blue2}),(Y,Y_{red}),(Y,Y_{green1}),\\ (Y,Y_{green2}),(Y,Y_{blue1}),(Y,Y_{blue2})\}
+\end{split}
+\end{equation*}
+Given condition which is knowing that the selected box is X, limits the sample space to,
+\begin{equation*} 
+\begin{split}
+\Omega' = \{(X,X_{red1}),(X,X_{red2}),(X,X_{green1}),(X,X_{green2}),(X,X_{blue1}),(X,X_{blue2})\}
+\end{split}
+\end{equation*}
+
+Since we are randomly choosing the ball, 
+all outcomes in $\Omega'$ are equally likely. Therefore, 
+\begin{equation*} 
+\begin{split}
+P(A|B) = \frac{\textit{number of favourable outcomes in}\ \Omega'}{\textit{number of total outcomes in}\ \Omega'}
+\end{split}
+\end{equation*}
+where $P(A|B)$ represents probability that we pick a green ball given that the selected box is X, and our favourable outcomes in this case are $(X,X_{red1}),(X,X_{red2})$. And the number of total outcomes in $\Omega'$ equals to 6. So if we apply the above formula,
+\begin{equation*} 
+\begin{split}
+P(A|B) = \frac{2}{6} 
+\end{split}
+\end{equation*}
+
+\subsection*{b)} We can pick a red ball in 2 different ways: either we can pick the X box and pick a red ball from it or we can pick the Y box and then pick a red ball from it. Before starting the calculation, let's denote some events: \\
+Choosing the Y box as $Y$ \\
+Choosing the X box as $X$ \\
+Choosing a red ball as $R$ \\
+Since $Y$ and $X$ are both exhaustive and mutually exclusive events, by the law of Total Probability,
+\begin{equation} 
+\begin{split}
+P(R) = P(R|Y)*P(Y) + P(R|X)*P(X)
+\end{split}
+\end{equation}
+Since the ball is chosen randomly, then probability of picking a ball from the selected box is as equally likely as choosing the another one. So, probability of picking a ball with x color from the selected box can be calculated as
+\begin{equation} 
+\begin{split}
+P(x) = \frac{\textit{number of balls with color x}}{\textit{number of total balls}}
+\end{split}
+\end{equation}
+
+
+Since choosing the X box and choosing the Y box are exhaustive events, then $P(Y) = 1-P(X) = 0.6$. Additionally, $P(R|Y)$ can be derived from (2), $P(R|Y) = 1/5 = 0.2$.Hence,
+\begin{equation} 
+\begin{split}
+P(R|Y)*P(Y) = (0.6)*(0.2) = 0.12
+\end{split}
+\end{equation}
+We can apply the same procedure to calculate $P(R|X)*P(X)$.By using (2), $P(R|X) = 1/3$.Hence,
+\begin{equation} 
+\begin{split}
+P(R|X)*P(X) = (0.4)*(1/3) = 2/15
+\end{split}
+\end{equation}
+By using (1), (3) and (4) ;
+\begin{equation} 
+\begin{split}
+P(R) = 0.12 + 2/15 = 38/150
+\end{split}
+\end{equation}
+
+
+
+
+\subsection*{c)} Since we have got previously known information, to calculate the probability that we had chosen the Y box when we know that picked ball is blue, we can use Bayes' Theorem:
+\begin{equation} 
+\begin{split}
+P(Y|B) = \frac{P(B|Y)*P(Y)}{P(B)}
+\end{split}
+\end{equation}
+where $Y$ represents choosing the Y box and $B$ represents picking a blue ball.Firstly, let's calculate $P(B)$.We can pick a blue ball in 2 different ways: either we can pick the X box and pick a blue ball from it or we can pick the Y box and then pick a blue ball from it.Since $Y$ and $X$ are both exhaustive and mutually exclusive events, by the law of Total Probability,
+\begin{equation} 
+\begin{split}
+P(B) = P(B|Y)*P(Y) + P(B|X)*P(X)
+\end{split}
+\end{equation}
+Since the ball is chosen randomly, then probability of picking a ball from the selected box is as equally likely as choosing the another one. So we can use (2) for this question too, to calculate the probability of choosing a blue ball from the selected box:
+\begin{equation} 
+\begin{split}
+P(B|Y) = 2/5 \\
+P(B|X) = 2/6 = 1/3 
+\end{split}
+\end{equation}
+Since $Y$ and $X$ are both exhaustive events, $P(Y) = 1-P(X) = 0.6$. Then,
+\begin{equation} 
+\begin{split}
+P(B|Y)*P(Y) = (2/5)*(0.6)= 0.24 \\
+P(B|X)*P(X) = (1/3)*(0.4) = 2/15 
+\end{split}
+\end{equation}
+Hence from (7),
+\begin{equation} 
+\begin{split}
+P(B) = P(B|Y)*P(Y) + P(B|X)*P(X) = 112/300
+\end{split}
+\end{equation}
+We have already found $P(B|Y)*P(Y)$ from (9). By using (6),(9) and (10) :
+\begin{equation} 
+\begin{split}
+P(Y|B) = \frac{(24/100)}{(112/300)} =72/112
+\end{split}
+\end{equation}
+Thus, probability of we had chosen the Y box when we know that picked ball is blue is $72/112$
+
+\section*{Answer 2}
+\subsection*{a)}In order to prove given argument, we should be able to prove both: "$A$ and $B$ are mutually exclusive" implies that "$\overline{A}$ and $\overline{B}$ are exhaustive", and "$\overline{A}$ and $\overline{B}$ are exhaustive" implies that "$A$ and $B$ are mutually exclusive". \\
+\textbf{1-Prove if "$A$ and $B$ are mutually exclusive" then "$\overline{A}$ and $\overline{B}$ are exhaustive":} Assume that $A$ and $B$ are mutually exclusive events.Then, by the definition, 
+\begin{equation} 
+\begin{split}
+A \cap B = \emptyset
+\end{split}
+\end{equation}
+If we take the complement of (12), by the De Morgan's Rule:
+\begin{equation} 
+\begin{split}
+\overline{A} \cup \overline{B} = \Omega
+\end{split}
+\end{equation}
+Since (13) satisfies, by the definition of exhaustive events, we showed that $\overline{A}$ and $\overline{B}$ are exhaustive events. Since we assumed "$A$ and $B$ are mutually exclusive events" and reached (13), we proved that if "$A$ and $B$ are mutually exclusive" then "$\overline{A}$ and $\overline{B}$ are exhaustive events". \\
+\textbf{2-Prove that "if $\overline{A}$ and $\overline{B}$ are exhaustive events" then "$A$ and $B$ are mutually exclusive events":} Assumed that $\overline{A}$ and $\overline{B}$ are exhaustive events. Then, by the definition,
+\begin{equation} 
+\begin{split}
+\overline{A} \cup \overline{B} = \Omega
+\end{split}
+\end{equation}
+If we take the complement of (14), by the De Morgan's Rule:
+\begin{equation} 
+\begin{split}
+A \cap B = \emptyset
+\end{split}
+\end{equation}
+Since (15) satisfies, by the definition of mutually exclusive events, we showed that $A$ and $B$ are mutually exclusive events. Since we assumed "$\overline{A}$ and $\overline{B}$ are exhaustive events" and reached (15), we proved that if "$\overline{A}$ and $\overline{B}$ are exhaustive events" then "$A$ and $B$ are mutually exclusive events". \\ \\
+We were able to prove both if "$A$ and $B$ are mutually exclusive events" then  "$\overline{A}$ and $\overline{B}$ are exhaustive events", and if "$\overline{A}$ and $\overline{B}$ are exhaustive events" then "$A$ and $B$ are mutually exclusive events". Thus, we proved that $A$ and $B$ are mutually exclusive events if and only if $\overline{A}$ and
+$\overline{B}$ are exhaustive events.
+
+
+\subsection*{b)}
+Assume that given statement is true.
+Then, \\
+1) If "$A$, $B$ and $C$ are mutually exclusive events" then "$\overline{A}$,
+$\overline{B}$ and $\overline{C}$ are exhaustive events" \\
+2) If "$\overline{A}$,
+$\overline{B}$ and $\overline{C}$ are exhaustive events" then "$A$, $B$ and $C$ are mutually exclusive events" \\
+must satisfy.
+Let $\overline{B} = A$, $ \overline{C} = \overline{A} $ and $A \neq \emptyset$ then, 
+\begin{equation*} 
+\begin{split}
+(\overline{A} \cup \overline{B})\cup \overline{C} & = (\overline{A} \cup A) \cup \overline{C} \\
+& = \Omega \cup \overline{C} \quad \textit{Complement Law} \\
+& =  \Omega \quad \textit{Dominance Law} \\
+\end{split}
+\end{equation*}
+Since $(\overline{A} \cup \overline{B})\cup \overline{C} = \Omega$ by the definition of exhaustive events, $\overline{A}, \overline{B}$ and $\overline{C}$ are exhaustive events. Since we assumed that given statement is true and $\overline{A}, \overline{B}$ and $\overline{C}$ are exhaustive events, by the second condition,  A, B and C must be mutually exclusive events. 
+\begin{equation*} 
+\begin{split}
+A \cap C & = A \cap  \overline{\overline{A}}\  \\
+& = A \cap A \quad \textit{Involution Law} \\
+& =  A \quad \textit{Idempotent Law} \\
+\end{split}
+\end{equation*}
+Since $A \cap C = A$ and $A \neq  \emptyset$, A and C don't satisfy the definition of mutually exclusive events. So, $A$ and $C$ are not mutally exclusive events. Hence, we have found one case that doesn't satisfy given statement. Thus, by using proof by contradiction, we disproved given statement.
+
+
+
+\section*{Answer 3}
+\subsection*{a)} Since for each die roll we have either a successful die or unsuccessful die, rolling a single die is a Bernoulli Experiment and rolling five dice is 5 times repeated Bernoulli Experiment. As we know, distribution of n times repeated Bernoulli Experiment is a binomial distribution. Let's define a binomial random variable X as number of successful dice in rolling 5 dice. So we should find $P\{X = 2\}$ where $P\{X = x\}$ is probability mass function of X. As we know from the Binomial distribution, \\
+\begin{equation} 
+\begin{split}
+P\{X = k\} = C(n,k)*P(s)^{k}*(1-P(s))^{n-k}
+\end{split}
+\end{equation}
+where n is number of repeated Bernoulli Experiment, k is the number of successful dice and $P(s)$ is the probability of a single successful die. In our case, since 2 of the faces of the die which are 5 and 6 out of 6 faces are successful and probabilities of each face is equally likely since dice are fair, $P(s) = \frac{\textit{Number of succesful outcomes}}{\textit{Number of total outcomes}} =2/6 = 1/3$ and from the question $n=5$ and $k=2$.\\
+If we put the obtained parameters to (16),\\
+\begin{equation} 
+\begin{split}
+P\{X = 2\} = C(5,2)*(1/3)^{2}*(2/3)^{3} = 80/243
+\end{split}
+\end{equation}
+Hence, probability that we have exactly 2 successful dice ($P\{X=2\}$) equals to $80/243$.
+\subsection*{b)} For this question let's use X as the way it is defined in (a) part. So we are trying to find $P\{1<X\leq 5\}$. Let $F_{X}(x)$ be the cumulative distribution function of X. By using the definition of F(x) and the given formula ("Probability and Statistics For Computer Scientists" page 41): 
+\begin{equation} 
+\begin{split}
+P\{1<X\leq 5\} = F_{X}(5) - F_{X}(1)
+\end{split}
+\end{equation}
+By using the definition of F(x)
+\begin{equation} 
+\begin{split}
+F_{X}(5) = \sum_{y=0}^{5} P_{X}(y) = 1
+\end{split}
+\end{equation}
+\begin{equation} 
+\begin{split}
+F_{X}(1) = \sum_{y=0}^{1} P_{X}(y) = P_{X}(0) + P_{X}(1)
+\end{split}
+\end{equation}
+By using (16),
+\begin{equation} 
+\begin{split}
+P_{X}(0) = C(5,0)*(2/3)^5 = 32/243 \quad P_{X}(1) = C(5,1)*(1/3)*(2/3)^4 = 80/243
+\end{split}
+\end{equation}
+Hence, $F_{X}(1) = 112/243$. \\ \\
+Combining (18),(19),(20) and (21),
+\begin{equation} 
+\begin{split}
+P\{1<X\leq 5\} = 1-112/243 = 131/243
+\end{split}
+\end{equation}
+Hence, probability that we have at least 2 successful dice equals to $131/243$.
+
+\section*{Answer 4}
+\subsection*{a)} Since $\{B=0\}$ and $\{B=1\}$ are exhaustive and mutually exclusive events, we can use Addition Rule to calculate $P(A=1,C=0)$:
+\begin{equation} 
+	\begin{split}
+		P(A=1,C=0) = \sum_{b}P(A=1,B=b,C=0) = P(A=1,B=0,C=0)+P(A=1,B=1,C=0)
+	\end{split}
+\end{equation}
+From the given table, from row 5, $P(A=1,B=0,C=0)=0.06$ and from row 7, $P(A=1,B=1,C=0)=0.09$. Hence, from (23),
+$P(A=1,C=0) = 0.06 + 0.09 = 0.15$
+\subsection*{b)} Since {(A,C) = (a,c)} are mutually exclusive and exhaustive events for the different pairs of (a,c), we can use Addition Rule to calculate $P(B=1)$:
+\begin{equation} 
+\begin{split}
+P(B=1) = \sum_{a}\sum_{c}P(A=a,B=1,C=c)
+\end{split}
+\end{equation}
+Then, from the table:
+\begin{equation} 
+\begin{split}
+P(A=0,B=1,C=0) = 0.21 \ (Row \ 3) \\
+P(A=0,B=1,C=1) = 0.02 \ (Row \ 4) \\
+P(A=1,B=1,C=0) = 0.09 \ (Row \ 7) \\
+P(A=1,B=1,C=1) = 0.08 \ (Row \ 8) \\
+\end{split}
+\end{equation}
+Hence, by using (24) and (25):
+\begin{equation*} 
+\begin{split}
+P(B=1) = 0.21+0.02+0.09+0.08 = 0.4
+\end{split}
+\end{equation*}
+\subsection*{c)}Let's assume that A and B independent random variables, then by the definition, for all (a,b) pairs:
+\begin{equation} 
+\begin{split}
+P(A=a,B=b) = P(A=a)*P(B=b)
+\end{split}
+\end{equation}
+must be satisfied. Let's observe $P(A=1,B=1)$ case. Since we assumed A and B are independent then by (26):
+\begin{equation} 
+\begin{split}
+P(A=1,B=1) = P(A=1)*P(B=1)
+\end{split}
+\end{equation}
+must be satisfied. Since $\{C=1\}$ and $\{C=0\}$ are mutually exclusive and exhaustive events by the Addition Rule:
+\begin{equation*} 
+\begin{split}
+P(A=1,B=1) = P(A=1,B=1,C=0) + P(A=1,B=1,C=1)
+\end{split}
+\end{equation*}
+Then, from the given table:
+\begin{equation*} 
+\begin{split}
+P(A=1,B=1) = 0.09+0.08 = 0.17
+\end{split}
+\end{equation*}
+Since {(B,C) = (b,c)} are mutually exclusive and exhaustive events for the different pairs of (b,c), we can use Addition Rule to calculate $P(A=1)$:
+\begin{equation} 
+\begin{split}
+P(A=1) = \sum_{b}\sum_{c}P(A=1,B=b,C=c)
+\end{split}
+\end{equation}
+Then,
+\begin{equation} 
+\begin{split}
+P(A=1,B=0,C=0) = 0.06 \ (Row \ 5) \\
+P(A=1,B=0,C=1) = 0.32 \ (Row \ 6) \\
+P(A=1,B=1,C=0) = 0.09 \ (Row \ 7) \\
+P(A=1,B=1,C=1) = 0.08 \ (Row \ 8) \\
+\end{split}
+\end{equation}
+Hence, by using (28) and (29), $P(A=1) = 0.06 + 0.32 + 0.09+ 0.08 = 0.55$. Also we have already found $P(B) = 0.4$ from the b section. Since $P(A=1,B=1) = 0.17 \neq P(A=1)*P(B=1) = 0.4*0.55 = 0.22$, (27) is not satisfied. Thus,by using proof by contradiction, we've proved that A and B are not independent random variables.
+
+\subsection*{d)} By the definition, A and B random variables are conditionally independent under the condition $C=1$ if:
+\begin{equation} 
+\begin{split}
+P(A=a \cap B=b|C=1) = P(A=a,B=b|C=1) = P(A=a|C=1)*P(B=b|C=1)
+\end{split}
+\end{equation}
+for all (a,b) pairs. By the definition of conditional probability:
+\begin{equation} 
+\begin{split}
+P(A=a|C=1) = \frac{P(A=a,C=1)}{P(C=1)} \\
+P(B=b|C=1) = \frac{P(B=b,C=1)}{P(C=1)} \\
+P(A=a,B=b|C=1) = \frac{P(A=a,B=b,C=1)}{P(C=1)}
+\end{split}
+\end{equation}
+Since {(A,B) = (a,b)} are mutually exclusive and exhaustive events for the different pairs of (a,b), we can use Addition Rule to calculate $P(C=1)$:
+\begin{equation} 
+\begin{split}
+P(C=1) = \sum_{a}\sum_{b}P(A=a,B=b,C=1)
+\end{split}
+\end{equation}
+Then,
+\begin{equation} 
+\begin{split}
+P(A=0,B=0,C=1) = 0.08 \ (Row \ 2) \\
+P(A=0,B=1,C=1) = 0.02 \ (Row \ 4) \\
+P(A=1,B=0,C=1) = 0.32 \ (Row \ 6) \\
+P(A=1,B=1,C=1) = 0.08 \ (Row \ 8) \\
+\end{split}
+\end{equation}
+By using (32), $P(C=1) = 0.08+ 0.02 + 0.32 + 0.8 = 0.5$
+If we can show that (30) satisfies for all (a,b) pairs, then we can prove that A and B are conditional independent random variables under the condition $C=1$. \\
+Since $\{B=1\}$ and $\{B=0\}$ are mutually exclusive and exhaustive events we can use Addition Rule:
+\begin{equation} 
+\begin{split}
+P(A=1,C=1) = P(A=1,B=0,C=1) + P(A=1,B=1,C=1) \\
+P(A=1,C=1) = 0.32 + 0.08 = 0.4 \\
+P(A=0,C=1) = P(A=0,B=0,C=1) + P(A=0,B=1,C=1) \\
+P(A=0,C=1) = 0.08 + 0.02 = 0.1
+\end{split}
+\end{equation}
+Since $\{A=1\}$ and $\{A=0\}$ are mutually exclusive and exhaustive events we can use Addition Rule:
+\begin{equation} 
+\begin{split}
+P(B=1,C=1) = P(A=1,B=1,C=1) + P(A=0,B=1,C=1) \\
+P(B=1,C=1) = 0.08 + 0.02 = 0.1 \\
+P(B=0,C=1) = P(A=0,B=0,C=1) + P(A=1,B=0,C=1) \\
+P(B=0,C=1) = 0.08 + 0.32 = 0.4
+\end{split}
+\end{equation}
+Additionally, from the table,
+\begin{equation} 
+\begin{split}
+P(A=0,B=0,C=1) = 0.08 \\
+P(A=0,B=1,C=1) = 0.02 \\
+P(A=1,B=0,C=1) = 0.32 \\
+P(A=1,B=1,C=1) = 0.08 \\
+\end{split}
+\end{equation}
+Using (31)
+\begin{equation} 
+\begin{split}
+P(A=0|C=1) = \frac{P(A=0,C=1)}{P(C=1)} = 0.1/0.5 = 0.2 \\
+P(A=1|C=1) = \frac{P(A=1,C=1)}{P(C=1)} = 0.4/0.5 = 0.8\\
+P(B=0|C=1) = \frac{P(B=0,C=1)}{P(C=1)} = 0.4/0.5 = 0.8\\
+P(B=1|C=1) = \frac{P(B=1,C=1)}{P(C=1)} = 0.1/0.5 = 0.2\\
+P(A=0,B=0|C=1) = \frac{P(A=0,B=0,C=1)}{P(C=1)} = 0.08/0.5 = 0.16\\
+P(A=0,B=1|C=1) = \frac{P(A=0,B=1,C=1)}{P(C=1)} = 0.02/0.5 =0.04\\
+P(A=1,B=0|C=1) = \frac{P(A=1,B=0,C=1)}{P(C=1)} =0.32/0.5 = 0.64 \\
+P(A=1,B=1|C=1) = \frac{P(A=1,B=1,C=1)}{P(C=1)} =0.08/0.5 = 0.16\\
+\end{split}
+\end{equation}
+Let's observe that whether for all (a,b) 
+(30) holds or not:
+\begin{equation} 
+\begin{split}
+P(A=0,B=0|C=1) = 0.16 = P(A=0|C=1)*P(B=0|C=1) = 0.16 \\
+P(A=0,B=1|C=1) = 0.04 = P(A=0|C=1)*P(B=1|C=1) = 0.04 \\
+P(A=1,B=0|C=1) = 0.64 = P(A=1|C=1)*P(B=0|C=1) = 0.64 \\
+P(A=1,B=1|C=1) = 0.16 = P(A=1|C=1)*P(B=1|C=1) = 0.16 \\
+\end{split}
+\end{equation}
+In (38), we are able to show that for all (a,b) pairs (30) holds. Thus, we have proved that A and B are conditionally independent random variables under the condition $C=1$
+
+\end{document}
+

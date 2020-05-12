@@ -1,1 +1,1 @@
-Discrete Computational Structures
+Ceng223 - Discrete Computational Structures

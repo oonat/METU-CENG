@@ -1,0 +1,238 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+\usepackage{indentfirst}
+\usepackage{amsfonts}
+
+
+
+\begin{document}
+
+\section*{Student Information}
+
+Name : Onat Özdemir\\
+
+ID : 2310399\\
+
+
+\pgfmathdeclarefunction{gauss}{2}{%
+	\pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+\section*{Answer 1}
+\subsection*{a)} We can divide the UK into two different populations: people with age 40 and above and people with age under 40. Let $X$ and $Y$ represents our independently chosen samples which are belong to the people with age 40 and above and people with age under 40, respectively. Additionally, let $\mu_{X}$ and $\mu_{Y}$ represent the population means of the people with age 40 and above and the people with age under 40, respectively and $\bar{X}$ and $\bar{Y}$ be sample means that estimate $\mu_{X}$ and $\mu_{Y}$, respectively.\\
+
+As can be seen, population standard deviations are unknown (not given) in this question. If we would have sufficiently large samples where the both size of X and the size of Y are above 30 then sample standard deviations would be accurate estimators for population standard deviations and then we could find the confidence interval by using Z-statistic. However, since we do not have sufficiently large samples we have to use T statistic to calculate the confidence interval. \\ \\
+Firstly, let's assume that the two population have equal variances, $\sigma^{2}_{X} = \sigma^{2}_{Y}  = \sigma^{2}$. With this assumption, we can use the formula given in "Probability and Statistics for Computer Scientists, page 262, Confidence interval for the difference of means; equal, unknown standard deviations" to calculate the confidence interval;
+\begin{equation} 
+\begin{split}
+\bar{X} - \bar{Y} \pm t_{\alpha/2}s_{p}\sqrt{\frac{1}{n}+\frac{1}{m}}
+\end{split}
+\end{equation}
+where $t_{\alpha/2}$ is a critical value from T-distribution with $(n+m-2)$ degrees of freedom and $\alpha$ is the significance level. And $s_{p}$ is the pooled standard deviation where
+\begin{equation} 
+\begin{split}
+s_{p} = \sqrt{\frac{(n-1)s^2_{X} + (m-1)s^2_{Y}}{n+m-2}}
+\end{split}
+\end{equation}
+where $s_{X}$ and $s_{Y}$ are sample standard deviations, n and m are sizes of samples. \\ \\
+From the question we have, n(sample size of the first group) = 19, m(sample size of the second group) = 15, $s_{X} = 0.96$, $s_{Y} = 1.12$, $\bar{X} = 3.375$ and $\bar{Y} = 2.05$. Also, since question asks for the $95\%$ confidence interval then $\alpha \ (significance \ level) = 1-0.95 = 0.05$. (from $(1-\alpha)100\% = 95\%$)\\ \\
+To find $t_{\alpha/2} = t_{0.025}$ we can use the Student's T-Distribution Table (A5) given in "Probability and Statistics for Computer Scientists, page 419" by taking degrees of freedom = $(n+m-2) = 19 + 15 -2 = 32$. Since according to the table, $P\{t > 2.037\} = 0.025$ then $t_{0.025} = 2.037$. \\ \\
+Then, let us calculate the $s_{p}$ using the formula give in (2);
+\begin{equation} 
+\begin{split}
+s_{p} = \sqrt{\frac{(n-1)s^2_{X} + (m-1)s^2_{Y}}{n+m-2}} = \sqrt{\frac{(18)*(0.96)^{2} + (14)*(1.12)^{2}}{32}} = 1.03305
+\end{split}
+\end{equation}
+To calculate $95\%$ confidence interval on the difference between the means, put the parameters we have found to (1),
+\begin{equation} 
+\begin{split}
+\bar{X} - \bar{Y} \pm t_{0.025}s_{p}\sqrt{\frac{1}{n}+\frac{1}{m}} = 3.375-2.05 \pm 2.037*1.03305*\sqrt{\frac{1}{19}+\frac{1}{15}}
+\end{split}
+\end{equation}
+Thus, $95\%$ confidence interval on the difference between the means equals to $[0.598176,2.05182]$
+
+\subsection*{b)} In 1-a, the definitions and values of $\bar{X}$, $\bar{Y}$, n, m, $s_{p}$, $s_{X}$, $s_{Y}$ are given and since the values of those parameters do not depend on the confidence level, I will use those parameters with the same definitions and values as given in 1-a. \\ \\ 
+To calculate $90\%$ confidence interval on the difference between the means we can use the same formula given in (1);
+\begin{equation} 
+\begin{split}
+\bar{X} - \bar{Y} \pm t_{\alpha/2}s_{p}\sqrt{\frac{1}{n}+\frac{1}{m}}
+\end{split}
+\end{equation}
+Although other parameters don't depend on the confidence level, $t_{\alpha/2}$ depends on it so we should recalculate it.
+Since question asks for the $90\%$ confidence interval then $\alpha \ (significance \ level) = 1-0.90 = 0.10$ (from $(1-\alpha)100\% = 90\%$). \\ \\
+To find $t_{\alpha/2} = t_{0.05}$ we can use the Student's T-Distribution Table (A5) given in "Probability and Statistics for Computer Scientists, page 419" by taking degrees of freedom = $n+m-2 = 19 + 15 -2 = 32$. Since according to the table, $P\{t > 1.694\} = 0.05$ then $t_{0.05} = 1.694$. \\
+
+To calculate $90\%$ confidence interval on the difference between the means, put  the parameters we found in 1-a and  $t_{0.05}$ to (5);
+\begin{equation} 
+\begin{split}
+\bar{X} - \bar{Y} \pm t_{0.05}s_{p}\sqrt{\frac{1}{n}+\frac{1}{m}} = 3.375-2.05 \pm 1.694*1.03305*\sqrt{\frac{1}{19}+\frac{1}{15}}
+\end{split}
+\end{equation}
+Thus, $90\%$ confidence interval on the difference between the means equals to $[0.720562,1.92944]$
+
+\subsection*{c)} We are interested in if the age 40 and above supports BREXIT or equivalently if the population mean of the people with age 40 and above ($\mu_{X}$)  is higher than 3 with $95\%$ confidence level. Therefore, we will test $H_{0}$ against a one sided right tail alternative $H_{A}$ using t-test (we will use t-test since the population standard deviation is unknown and our sample size is not sufficiently large to estimate population standard deviation accurately($n=19 < 30$)) where;
+\begin{equation} 
+\begin{split}
+H_{0}: \mu_{X} = 3 \qquad H_{A}: \mu_{X} > 3
+\end{split}
+\end{equation}
+We are given that $s_{X} = 0.96$, $\bar{X} = 3.375$, n = 19 and $\alpha (level \ of \ significance) = 1 - 0.95 = 0.05$. (from $(1-\alpha)100\% = 95\%$) \\ \\ 
+Since we have one sided right tail alternative, if $t \geq t_{\alpha}$ we will reject $H_{0}$ and if $t < t_{\alpha}$ then we will say that there is no significant evidence to reject $H_{0}$ where t is our T-statistic and $t_{\alpha} = t_{0.05}$ represents the critical value from T-distribution with $n-1 = 19 -1 = 18$ degrees of freedom (the reason behind using $t_{\alpha}$ as our critical value rather than $t_{\alpha/2}$ is that as stated before we have one sided right tail alternative). Therefore our rejection region $R = [t_{0.05},\infty)$. To find $t_{\alpha} = t_{0.05}$ we can use Student’s T-Distribution Table (A5) placed in "Probability and Statistics for Computer Scientists", by taking $df (degrees \ of \ freedom) = n-1 = 19 -1 = 18$ and $\alpha = 0.05$, hence we have found that $t_{0.05} = 1.734$. \\ \\
+Then, let us calculate the T-statistic by using the formula given in "Probability and Statistics for Computer Scientists, page 276, table 9.2", since the population standard deviation is not given we will estimate it with $s_{X}$;
+\begin{equation} 
+\begin{split}
+t = \frac{\bar{X}-3}{s_{X}/\sqrt{n}} = \frac{3.375-3}{0.96/\sqrt{19}} = 1.70269
+\end{split}
+\end{equation}
+Since $t = 1.70269 < t_{0.05} = 1.734$, $t \notin R$. Hence, we cannot reject $H_{0}$ since we do not have significant evidence. Thus, we cannot say people with
+age 40 and above supports BREXIT with $95\%$ confidence level.
+
+\section*{Answer 2}
+\subsection*{a)} 
+\begin{equation*} 
+\begin{split}
+H_{0}: \mu = \mu_{0}
+\end{split}
+\end{equation*}
+where $\mu$ represents the population mean of weights (in kg) of the olympic bars in the line while $\mu_{0}$ represents the average weight of the olympic bars produced by the company where $\mu_{0} = 20 \ kg$ as given in the text.
+\subsection*{b)} 
+\begin{equation*} 
+\begin{split}
+H_{A}: \mu \neq \mu_{0}
+\end{split}
+\end{equation*}
+where $\mu$ represents the population mean of weights (in kg) of the olympic bars in the line while $\mu_{0}$ represents the average weight of the olympic bars produced by the company where $\mu_{0} = 20 \ kg$ as given in the text.
+\subsection*{c)} We will test $H_{0}$ against a two sided alternative $H_{A}$ using one sample t-test. \\
+In the question, we are given;
+\begin{equation} 
+\begin{split}
+\mu_{0} \ (population \ mean)= 20 \\
+\bar{X} \ (sample \ mean) = 20.07 \\
+s \ (sample \ standart \ deviation) = 0.07 \\
+\alpha \ (level \ of \ significance) = 0.01 \\
+n \ (sample \ size) = 11
+\end{split}
+\end{equation}
+Since we have two sided alternative, if $|t| \geq t_{\alpha/2}$ we will reject $H_{0}$ and if $|t| < t_{\alpha/2}$ then we will say that there is no significant evidence to reject $H_{0}$ where $t$ is our T-statistic and $t_{\alpha/2} = t_{0.005}$ represents the critical value from T-distribution with $n-1 = 11 -1 = 10$ degrees of freedom. Therefore our rejection region $R = (-\infty,-t_{0.005}] \ \cup [t_{0.005},\infty)$. To find $t_{\alpha/2} = t_{0.005}$ we can use Student’s T-Distribution Table (A5) placed in "Probability and Statistics for Computer Scientists", by taking $df (degrees \ of \ freedom) = n-1 = 10$ and $\alpha = 0.005$, hence we have found that $t_{0.005} = 3.169$. \\ \\
+t-test diagram is given below where the coloured area represents rejection regions: 
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+no markers, domain=-10:10, samples=100,
+axis lines*=middle, xlabel=$T$, ylabel=$density$,
+every axis y label/.style={at=(current axis.above origin),anchor=south},
+every axis x label/.style={at=(current axis.right of origin),anchor=west},
+height=5cm, width=12cm,
+xtick={-3.169,3.169}, xticklabels={$-t_{0.005}=-3.169$, $t_{0.005}=3.169$} , ytick=\empty,
+enlargelimits=false, clip=false, axis on top,
+grid = major
+]
+\addplot [fill=cyan!20, draw=none, domain=3.17:10] {gauss(0,3)}
+\closedcycle;
+\addplot [fill=cyan!20, draw=none, domain=-10:-3.17] {gauss(0,3)}
+\closedcycle;
+\addplot [very thick,cyan!50!black] {gauss(0,3)};
+
+\end{axis}
+
+\end{tikzpicture}
+\caption{t-test diagram}
+\end{figure}
+
+Then, let us calculate the T-statistic by using the formula given in "Probability and Statistics for Computer Scientists, page 276, table 9.2" and the values given in (9);
+\begin{equation} 
+\begin{split}
+t = \frac{\bar{X}-\mu_{0}}{s/\sqrt{n}} = \frac{20.07-20}{0.07/\sqrt{11}} = 3.31662
+\end{split}
+\end{equation}
+
+Since $|t| = 3.31662  \geq t_{0.005} = 3.169$, $ t \in R$. Thus, we reject the null hypothesis $H_{0}$ and conclude that there is a significant evidence of an undesired production line. In conclusion, they should stop production and check the line.
+
+\section*{Answer 3}
+\subsection*{a)}
+\begin{equation*} 
+\begin{split}
+H_{0}: \mu_{X} - \mu_{Y} = 0
+\end{split}
+\end{equation*}
+where $\mu_{X}$ represents the population mean of the time (in minute) that the new painkiller reduces headache in while $\mu_{Y}$ represents the population mean of the time (in minute) that the painkillers existing in the market reduce headache in.
+\subsection*{b)}
+\begin{equation*} 
+\begin{split}
+H_{A}: \mu_{X} - \mu_{Y} < 0
+\end{split}
+\end{equation*}
+where $\mu_{X}$ represents the population mean of the time (in minute) that the new painkiller reduces headache in while $\mu_{Y}$ represents the population mean of the time (in minute) that the painkillers existing in the market reduce headache in.
+
+\subsection*{c)} We will test the $H_{0}$ against a one sided left tail alternative $H_{A}$ by using two sample Z-test.\\ 
+In the question, we are given (Let $X$ and $Y$ represents our independently chosen samples which are belong to the people who use the new painkiller and the people who use existing painkillers, respectively.); 
+
+\begin{equation} 
+\begin{split}
+\bar{X} = 2.8 \ (in \ minute) \\
+s_{X} = 1.7 \\
+n \ (size \ of \ X) = 68 \\
+\bar{Y} = 3 \ (in \ minute) \\
+s_{Y}  = 1.4 \\
+m \ (size \ of \ Y) = 68 \\
+\alpha \ (significance \ level) = 0.05 \\
+\end{split}
+\end{equation}
+
+Since we have one sided left tail alternative, if $Z \leq -z_{\alpha}$ we will reject $H_{0}$ and if $Z > -z_{\alpha}$ then we will say that there is no significant evidence to reject $H_{0}$ where $Z$ represents our Z-statistic $z_{\alpha} = z_{0.05}$ represents the critical value from Standard Normal Distribution. Therefore our rejection region $R = (-\infty,-z_{0.05}]$. To find $z_{\alpha} = z_{0.05}$ we can use the Standard Normal Distribution Table(A4) given in "Probability and Statistics for Computer Scientists, page 417". Since according to the table, $\Phi(1.645) = (1-0.05) = 0.950$ then $z_{0.05} = \Phi^{-1}(0.950) = 1.645$. So that $R = (-\infty,-1.645]$  \\ \\
+z-test diagram is given below where the coloured area represents rejection region: 
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[
+	no markers, domain=-10:10, samples=100,
+	axis lines*=middle, xlabel=$Z$, ylabel=$density$,
+	every axis y label/.style={at=(current axis.above origin),anchor=south},
+	every axis x label/.style={at=(current axis.right of origin),anchor=west},
+	height=5cm, width=12cm,
+	xtick={-1.645}, xticklabels={$-z_{0.05}=-1.645$} , ytick=\empty,
+	enlargelimits=false, clip=false, axis on top,
+	grid = major
+	]
+	\addplot [fill=cyan!20, draw=none, domain=-10:-1.645] {gauss(0,3)}
+	\closedcycle;
+	\addplot [very thick,cyan!50!black] {gauss(0,3)};
+	
+	\end{axis}
+	
+	\end{tikzpicture}
+	\caption{z-test diagram}
+\end{figure}
+
+Then, let us calculate test statistic using the formula given in "Probability and Statistics for Computer Scientists, page 273, table 9.1" and the values in (11);
+
+\begin{equation} 
+\begin{split}
+Z = \frac{\bar{X}-\bar{Y}}{\sqrt{\frac{\sigma^{2}_{X}}{n} + \frac{\sigma^{2}_{Y}}{m}}}
+\end{split}
+\end{equation}
+where $n = m = 68$, $\sigma_{X}$ and $\sigma_{Y}$ are population standard deviations of new painkiller and other painkillers, respectively. Since both sample sizes are sufficiently large ($68 > 30$), then we can use $s_{X}$ and $s_{Y}$ to estimate $\sigma_{X}$ and $\sigma_{Y}$, respectively (in other words $s_{X}$ and $s_{Y}$ will be accurate estimators since sample sizes are sufficiently large). Then;
+\begin{equation} 
+\begin{split}
+Z = \frac{\bar{X}-\bar{Y}}{\sqrt{\frac{s^{2}_{X}}{n} + \frac{s^{2}_{Y}}{m}}} = \frac{2.8-3}{\sqrt{\frac{(1.7)^{2}}{68} + \frac{(1.4)^{2}}{68}}} = -0.748882
+\end{split}
+\end{equation}
+
+Since $Z = -0.748882  >  -z_{0.05} = -1.645$, $ Z \notin R$. Hence, we cannot reject the null hypothesis $H_{0}$ since there is no significant evidence. Thus, we can not state the new painkiller really produce better results with $5 \%$
+level of significance.
+
+\end{document}
+

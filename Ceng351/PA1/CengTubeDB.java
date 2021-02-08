@@ -12,9 +12,9 @@ public class CengTubeDB implements ICengTubeDB{
          * example, you can set your connection to the database server inside this function.
          */
         private static String user = "e231039";
-        private static String password = "e41a4671";
+        private static String password = "";
         private static String database = "db231039";
-        private static String host = "144.122.71.168";
+        private static String host = "";
         private static int port = 3306;
 
         private static Connection connection = null;

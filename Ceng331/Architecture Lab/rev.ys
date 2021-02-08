@@ -1,0 +1,49 @@
+# Onat Ozdemir 2310399
+
+	.pos 0
+
+init:
+	irmovq stack, %rsp  	
+	call main		
+	halt			
+
+
+.pos 0x100
+ele0:
+	.quad 0x0000a
+	.quad ele1
+ele1:
+	.quad 0x000b0
+	.quad ele2
+ele2:
+	.quad 0x00c00
+	.quad ele3
+ele3:
+	.quad 0x0d000
+	.quad ele4
+ele4:
+	.quad 0xe0000
+	.quad 0
+
+main:
+	irmovq ele0, %rdi
+	call   rev
+	ret 
+
+
+rev:
+	xorq %rax,%rax		# set prev as null
+	jmp     test		# Goto test
+loop:	
+	mrmovq 8(%rdi),%r8		# struct list *next = head->next
+	rmmovq %rax, 8(%rdi)	# head->next = prev
+	rrmovq %rdi, %rax		# prev = head;
+	rrmovq %r8, %rdi		# head = next;
+test:
+	andq %rdi,%rdi		# check whether head is null
+	jne    loop	
+	ret
+
+
+	.pos 0x300
+stack:

@@ -1,0 +1,1 @@
+Managed to reduce the CPE from 15.18 to 6.22 in ncopy.ys

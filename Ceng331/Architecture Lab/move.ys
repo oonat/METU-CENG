@@ -1,0 +1,77 @@
+# Onat Ozdemir 2310399
+
+	.pos 0
+
+init:
+	irmovq stack, %rsp  	
+	call main		
+	halt			
+
+.pos 0x100
+array:
+	.quad 0x000000001
+	.quad 0x000000020
+	.quad 0x000000300
+# a pointer to the fourth element here
+arrayp3:
+	.quad 0x000004000
+	.quad 0x000050000
+	.quad 0x000600000
+	.quad 0x007000000
+	.quad 0x080000000
+	.quad 0x900000000
+
+main:
+	irmovq arrayp3, %rdi	# dest
+	irmovq array, %rsi		# src
+	irmovq $5, %rdx
+	call   move
+	ret 
+
+
+move:
+	xorq %rax, %rax		# set checksum to 0
+	irmovq $8, %r8		# set step to 8
+	irmovq $1, %r9		# set constant decr to 1
+	irmovq $8, %r10		# set elem_size to 8
+
+condition1:
+	pushq %rdi			# push dst
+	subq  %rsi, %rdi	 
+	popq  %rdi			# pop dst
+	jle test			# if src_v >= dst_v jump to test
+
+condition2:
+	rrmovq %rdx, %r11		# set r11 to len
+	addq %r11, %r11
+	addq %r11, %r11
+	addq %r11, %r11			# r11 equals to 8*len
+	pushq %rsi				# push src
+	addq %r11, %rsi			# src_v = src_v + elem_size*len
+	subq %rdi, %rsi
+	popq %rsi				# pop src
+	jle test
+
+inside:
+	addq %r11, %rdi    # dst += len*elem_size
+	subq %r10, %rdi    # dst -= elem_size
+	addq %r11, %rsi    # src += len*elem_size
+	subq %r10, %rsi    # src -= elem_size
+	irmovq $-8, %r8    # step = -8
+	jmp test
+
+loop:	
+	mrmovq (%rsi), %r10		# store *src in %r10
+	xorq %r10, %rax			# checksum ^= *src;
+	rmmovq %r10, (%rdi)		# *dst = *src;
+	addq %r8, %rdi			# dst += step;
+	addq %r8, %rsi			# src += step;
+	subq %r9, %rdx			# len--;  
+
+test:	
+	andq %rdx,%rdx  
+	jg    loop     	    # if len > 0 jump to loop
+	ret                 # return
+
+	.pos 0x600
+stack:

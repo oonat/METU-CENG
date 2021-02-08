@@ -1,0 +1,56 @@
+# Onat Ozdemir 2310399
+
+	.pos 0
+
+init:
+	irmovq stack, %rsp  	
+	call main		
+	halt			
+
+
+.pos 0x100
+ele0:
+	.quad 0x0000a
+	.quad ele1
+ele1:
+	.quad 0x000b0
+	.quad ele2
+ele2:
+	.quad 0x00c00
+	.quad ele3
+ele3:
+	.quad 0x0d000
+	.quad ele4
+ele4:
+	.quad 0xe0000
+	.quad 0
+
+main:
+	irmovq ele0, %rdi
+	call   rrev
+	ret 
+
+
+rrev:
+	andq %rdi, %rdi			# check if head is null
+	je base
+	mrmovq 8(%rdi), %r8
+	andq %r8, %r8			# check if head->next is null
+	je base
+body:
+	pushq %rdi				# push head
+	rrmovq %r8, %rdi
+	call rrev
+	popq %rdx				# get head
+	mrmovq 8(%rdx), %r8		# store head->next in %r8
+	rmmovq %rdx, 8(%r8)		# head->next->next = head;
+	irmovq $0, %r8
+	rmmovq %r8, 8(%rdx)		# head->next = (void *) 0; 
+	ret
+base:
+	rrmovq %rdi, %rax		# return head
+	ret                  
+
+
+	.pos 0x300
+stack:

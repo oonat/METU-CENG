@@ -1,0 +1,43 @@
+\begin{table}[H]
+     \centering
+     \begin{tabular}{|l|C|}
+         \hline
+          \textbf{Use-Case Name} & Record Video \\
+         \hline
+          \textbf{Actors} & User \\ 
+         \hline
+          \textbf{Description} & The user starts recording the livestream. \\ 
+         \hline
+          \textbf{Data} & Recorded video\\ 
+         \hline
+          \textbf{Preconditions} & 
+		  The user must be connected to the system. \newline
+		  Camera connection must be provided. \\
+         \hline
+          \textbf{Stimulus} & The user clicks on "Record" button.\\ 
+         \hline
+          \textbf{Basic Flow} & 
+          Step 1 -- The user clicks on "Record" button from the side pane. \newline
+          Step 2 -- The tab that contains live camera feed and menu for recording settings opens. \newline
+          Step 3 -- When user wants to start recording the livestream, he/she clicks on "Start Recording" button placed in the menu. \newline
+          Step 4 -- The system sends "record" command to the "Camera System". \newline
+          Step 5 -- The system displays a blinking led to indicate the recording. \newline
+          Step 6 -- The user clicks on "Stop Recording" button to stop the recording. \newline
+          Step 7 -- The system receives the recording from the "Camera System" and displays it in a popup window. \newline
+          Step 8 -- The user gives a name to the recording by filling the textbox placed in the popup window and specifies the time interval if he/she wants to cut the recording before saving it. \newline
+		  Step 9 -- The user clicks on "Save" button to save the recording. \newline
+		  Step 10 -- The system saves the video to the location specified in system settings and create database record for the video using the Database Management Interface. \\
+         \hline
+          \textbf{Alternative Flow\#1} & 
+          Step 8 -- The user clicks on the "Exit" button placed in the popup window to exit without saving the recording. \\
+         \hline
+          \textbf{Alternative Flow\#2} & - \\
+         \hline
+          \textbf{Exception Flow} & If the user tries to save the recording without naming it, the system displays an error message. If there is not enough available storage to store the recording, the system displays an error message.\\
+         \hline
+          \textbf{Post Conditions} & The recording is saved to the location specified in the settings and the popup window is closed. \\ 
+         \hline
+     \end{tabular}
+     \caption{Record Video}
+     \label{tab:record_video}
+ \end{table}

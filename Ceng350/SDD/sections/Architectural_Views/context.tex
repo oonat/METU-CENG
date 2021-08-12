@@ -1,0 +1,40 @@
+\subsubsection{Context Diagram}
+OpenFlexure is not a part of a larger system. The communication between the OpenFlexure and Users is maintained by the OpenFlexure Web API. Users will be able to send their requests and get responses from the server using the Web API.
+
+There are three user types in the system: Users (can be seen as end-user), Admins, and Maintainers. The system will provide different interfaces to each of them so that they can do the functions defined to them. Since Admins and Maintainers have private permissions, they will need to log in to the system using the keys defined to them to use their functions. While Admins and Maintainers will be responsible for keeping the system stable, Users will be able to use the microscope.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Uml_Images/system_context_diagram}
+	\caption{System Context Diagram for OpenFlexure}
+	\label{fig:system_context_diagram}
+\end{figure}
+
+
+\subsubsection{Use-Case Diagram}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Uml_Images/use_case_diagram}
+	\caption{Use Case Diagram for OpenFlexure}
+	\label{fig:use_case_diagram}
+\end{figure}
+
+
+\subsubsection{Use-Case Descriptions}
+\input{Use_Case_Tables/connect_to_microscope}
+\input{Use_Case_Tables/view_livestream}
+\input{Use_Case_Tables/record_video}
+\input{Use_Case_Tables/capture_image}
+\input{Use_Case_Tables/scan}
+\input{Use_Case_Tables/navigate_stage}
+\input{Use_Case_Tables/open_gallery}
+\input{Use_Case_Tables/modify_media}
+\input{Use_Case_Tables/log_in_as_admin}
+\input{Use_Case_Tables/manage_system_settings}
+\input{Use_Case_Tables/manage_connections}
+\input{Use_Case_Tables/block_user}
+\input{Use_Case_Tables/unblock_user}
+\input{Use_Case_Tables/log_in_as_maintainer}
+\input{Use_Case_Tables/view_system_logs}
+\input{Use_Case_Tables/check_updates}
+\input{Use_Case_Tables/update_software}

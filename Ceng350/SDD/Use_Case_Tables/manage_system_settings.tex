@@ -1,0 +1,35 @@
+\begin{table}[H]
+     \centering
+     \begin{tabular}{|l|C|}
+         \hline
+          \textbf{Use-Case Name} & Manage System Settings \\
+         \hline
+          \textbf{Actors} & Admin \\ 
+         \hline
+          \textbf{Description} & The admin manages and updates the system settings. \\ 
+         \hline
+          \textbf{Data} & Current settings, updated setting\\ 
+         \hline
+          \textbf{Preconditions} & 
+		  The admin must be logged in. \\
+         \hline
+          \textbf{Stimulus} & The admin gives "manage settings" command using the admin command line interface. \\ 
+         \hline
+          \textbf{Basic Flow} & 
+          Step 1 -- The system reaches to the local database and retrieve the system settings record. \newline    
+          Step 2 -- The system displays the current settings as a table where each row consists of the setting name and current value of the setting. \newline
+          Step 3 -- The admin gives "set \{setting name\} \{new value\}" command to change the value of the specified setting. \newline
+          Step 4 -- The system reaches to database and changes the value of the given settings field. \\
+         \hline
+          \textbf{Alternative Flow\#1} &  - \\
+         \hline
+          \textbf{Alternative Flow\#2} & -\\
+         \hline
+          \textbf{Exception Flow} & - \\
+         \hline
+          \textbf{Post Conditions} & The system settings are updated. \\ 
+         \hline
+     \end{tabular}
+     \caption{Manage System Settings}
+     \label{tab:manage_system_settings}
+ \end{table}

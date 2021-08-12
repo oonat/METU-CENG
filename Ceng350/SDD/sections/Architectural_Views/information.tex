@@ -1,0 +1,38 @@
+\subsubsection{Class Diagram}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.3]{Uml_Images/interface_class_diagram}
+	\caption{Interface Class Diagram for OpenFlexure}
+	\label{fig:interface_class_diagram}
+\end{figure}
+
+\input{Tables/operation_descriptions}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{Uml_Images/db_class_diagram}
+	\caption{Database Class Diagram for OpenFlexure}
+	\label{fig:db_class_diagram}
+\end{figure}
+
+\subsubsection{Database Operations}
+\input{Tables/CRUD}
+
+\subsubsection{Design Rationale}
+\paragraph{Interface Class Diagram}
+\begin{itemize}
+	\item Report Handler is responsible for creating and storing logs related to hardware failures and login errors.
+	\item Both Display Controller and Position Controller associated with the Report Handler to report hardware related problems.
+	\item Authentication System is associated with the Report Handler to report suspicious login attempts.
+	\item To allow the maintainers to use View System Logs function defined in use-case diagram, Maintainers component uses the interface provided by the Report Handler.
+	\item To allow the admins to use Block User and Unblock User functions defined in use-case diagram, Admins part is associated with the User Accounts part.
+	\item To be able to store the captured images, scans and recorded videos, Display Controller is associated with the Gallery.
+\end{itemize}
+\paragraph{Database Class Diagram}
+\begin{itemize}
+	\item For easy and fast usability of the microscope, users do not have to authenticate to the system. Therefore, for user records, password information is omitted.
+	\item To avoid repetition of the attributes, Media, System Log and Staff parent classes are defined. 
+	\item To be able to handle different types of errors, Login Attempt Log and Failure Log classes are created.
+	\item To allow the maintainer to use View System Logs function defined in use-case diagram, Maintainer and System Logs classes are linked to each other.
+\end{itemize}

@@ -1,0 +1,39 @@
+\begin{table}[H]
+     \centering
+     \begin{tabular}{|l|C|}
+         \hline
+          \textbf{Use-Case Name} & Connect to Microscope \\
+         \hline
+          \textbf{Actors} & User \\ 
+         \hline
+          \textbf{Description} & The user connects to the microscope's server. \\ 
+         \hline
+          \textbf{Data} & IP address of the user's computer\\ 
+         \hline
+          \textbf{Preconditions} & 
+          Desktop application must be running. \\
+         \hline
+          \textbf{Stimulus} & The user clicks on "Connect to server" button placed in the home screen of the desktop application.\\ 
+         \hline
+          \textbf{Basic Flow} & 
+          Step 1 -- The popup window contains the connection screen is opened. \newline
+          Step 2 -- The user chooses "Connect remotely" option from the option boxes. \newline
+          Step 3 -- Desktop application searches for the nearby microscope servers and lists the found ones. \newline
+          Step 4 -- The user selects one of the microscopes listed in. \newline
+          Step 5 -- The user clicks on "Connect" button. \\
+         \hline
+          \textbf{Alternative Flow\#1} & 
+          Step 2 -- The user chooses "Connect locally" option. \newline
+          Step 3 -- The desktop application searches for the web api internally stored in the Raspberry Pi, and when it finds, "Connect" button becomes available. \newline
+          Step 4 -- The user clicks on "Connect" button. \\
+         \hline
+          \textbf{Alternative Flow\#2} & - \\
+         \hline
+          \textbf{Exception Flow} & If desktop application cannot found any nearby servers or the web api, the system displays an error message saying that "No device were found". If the IP address of the user is blocked, the system displays an error message saying that "Your IP address is blocked".\\
+         \hline
+          \textbf{Post Conditions} & The user connects to the microscope. \\ 
+         \hline
+     \end{tabular}
+     \caption{Connect to Microscope}
+     \label{tab:connect_to_microscope}
+ \end{table}

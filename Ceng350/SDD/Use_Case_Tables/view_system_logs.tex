@@ -1,0 +1,34 @@
+\begin{table}[H]
+     \centering
+     \begin{tabular}{|l|C|}
+         \hline
+          \textbf{Use-Case Name} & View system logs \\
+         \hline
+          \textbf{Actors} & Maintainer \\ 
+         \hline
+          \textbf{Description} & The maintainer can list and view the system logs sorted by their dates.\\ 
+         \hline
+          \textbf{Data} & System logs\\ 
+         \hline
+          \textbf{Preconditions} & 
+          Maintainer must be logged in. \\
+         \hline
+          \textbf{Stimulus} & The maintainer gives "view logs" command using the command-line interface.\\ 
+         \hline
+          \textbf{Basic Flow} & 
+          Step 1 -- The server takes the request. \newline
+          Step 2 -- The server gathers the system logs from the database. \newline
+          Step 3 -- The system displays the system logs in command-line interface. \\
+         \hline
+          \textbf{Alternative Flow\#1} & - \\
+         \hline
+          \textbf{Alternative Flow\#2} & - \\
+         \hline
+          \textbf{Exception Flow} & If there is no system logs in database, the system displays a message saying that "No system logs were found". \\
+         \hline
+          \textbf{Post Conditions} & The system logs are displayed in the maintainer's interface. \\ 
+         \hline
+     \end{tabular}
+     \caption{View System Logs}
+     \label{tab:view_system_logs}
+ \end{table}

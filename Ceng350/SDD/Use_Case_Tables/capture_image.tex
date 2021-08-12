@@ -1,0 +1,41 @@
+\begin{table}[H]
+     \centering
+     \begin{tabular}{|l|C|}
+         \hline
+          \textbf{Use-Case Name} & Capture Image \\
+         \hline
+          \textbf{Actors} & User \\ 
+         \hline
+          \textbf{Description} & The user captures the image on the screen. \\ 
+         \hline
+          \textbf{Data} & Captured image\\ 
+         \hline
+          \textbf{Preconditions} & 
+          The user must be connected to the system. \newline
+          Camera connection must be provided. \\
+         \hline
+          \textbf{Stimulus} & The user clicks on "Capture" button.\\ 
+         \hline
+          \textbf{Basic Flow} & 
+          Step 1 -- The user clicks on "Capture" button from the side pane. \newline
+          Step 2 -- The tab that contains live camera feed and menu for image settings opens. \newline
+          Step 3 -- When user wants to capture the image on the screen, he/she clicks on "Capture image" button placed in the menu. \newline
+          Step 4 -- The system sends "capture" command to the "Camera System". \newline
+          Step 5 -- The system receives the captured image from the "Camera System" and displays it in a popup window. \newline
+          Step 6 -- The user gives a name to the captured image by filling the textbox placed in the popup window. \newline
+		  Step 7 -- The user clicks on "Save" button to save the captured image. \newline
+		  Step 8 -- The system saves the image to the location specified in system settings and create database record for the image using the Database Management Interface. \\
+         \hline
+          \textbf{Alternative Flow\#1} & 
+          Step 6 -- The user clicks on the "Exit" button to exit without saving the captured image. \\
+         \hline
+          \textbf{Alternative Flow\#2} & - \\
+         \hline
+          \textbf{Exception Flow} & If the user tries to save the image without naming it, the system displays an error message. If there is not available storage to store the image, the system displays an error message.\\
+         \hline
+          \textbf{Post Conditions} & The image is saved to the location specified in the system settings and the popup window is closed. \\ 
+         \hline
+     \end{tabular}
+     \caption{Capture Image}
+     \label{tab:capture_image}
+ \end{table}

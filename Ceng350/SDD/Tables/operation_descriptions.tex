@@ -1,0 +1,87 @@
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|C|}
+		\hline
+		\textbf{Operation}   &  \textbf{Description}\\
+		\hline
+		searchByTitle   &  returns the media with given title\\
+		\hline
+		searchByDate   &  returns the media with given date\\
+		\hline
+		saveMedia  &  saves the given media to the gallery media list\\
+		\hline
+		deleteMedia   &  delete the media with given id from the gallery media list\\
+		\hline
+		editMedia   &  edits the media with given id\\
+		\hline
+		centerPosition   &  positions the stage to the center\\
+		\hline
+		gotoPosition   &  positions the stage to the point with the given coordinates\\
+		\hline
+		setMotorSpeed  &  sets the motor speed\\
+		\hline
+		shiftNextPosition  &  shifts the stage position to the next one by incrementing the current coordinates\\
+		\hline
+		checkOutOfRange  &  checks if the current coordinates are out of range\\
+		\hline
+		captureImage  &  captures the displayed livestream and returns the captured image\\
+		\hline
+		startRecording   &  starts recording the livestream\\
+		\hline
+		stopRecording   &  stops the ongoing recording and returns the recorded video\\
+		\hline
+		scanArea & scans the area with the given border coordinates and returns it as image\\
+		\hline
+		getCameraFeed & streams the live camera feed \\
+		\hline
+		changeFrameRate & changes the frame rate of the camera\\
+		\hline
+		changeQuality & changes the quality of the camera\\
+		\hline
+		getLoginLogs & returns the list of Login Attempt Logs\\
+		\hline
+		getHardwareLogs & returns the list of Failure Logs\\
+\hline
+		findByComponent & returns the Failure Log with the given component name\\
+\hline
+		setAsSolved & sets the status of the log with given id as solved\\
+\hline
+		findByIpAddress & returns the Login Attempt Log with the given component name\\
+\hline
+		writeLoginLog & writes the login log created by Login Log Writer to the loginLogs list\\
+\hline
+		writeHardwareLog & writes the hardware log created by Hardware Log Writer to the hardwareLogs list\\
+\hline
+		createLoginLog & creates a Login Attempt Log and fills it with the given parameters\\
+\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|C|}
+		\hline
+	updateLoginLog & updates the Login Attempt Log with the given id\\
+	\hline
+	createFailureLog & creates a Failure Log and fills it with the given parameters\\
+	\hline
+	updateFailureLog & updates the Failure Log with the given id\\
+	\hline
+	authenticate & checks the password of the user with given staff type and authenticates him/her\\
+	\hline
+	getUserConnections & returns the list of Connections \\
+	\hline
+	checkAdminPassword & compares the given password with the password of the admin with given staffID and returns the result of the comparison \\
+	\hline
+	checkMaintainerPassword & compares the given password with the password of the maintainer with given staffID and returns the result of the comparison \\
+	\hline
+	blockUser & sets the blockStatus of the user with the given ip as True \\
+	\hline
+	unblockUser & sets the blockStatus of the user with the given ip as False \\
+	\hline
+	checkPassword & compares the given password with the password of the admin/maintainer \\
+	\hline
+	\end{tabular}
+	\caption{Operation Descriptions}
+	\label{tab:operation_descriptions}
+\end{table}

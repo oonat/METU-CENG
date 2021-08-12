@@ -1,0 +1,35 @@
+\begin{table}[H]
+     \centering
+     \begin{tabular}{|l|C|}
+         \hline
+          \textbf{Use-Case Name} & Unblock User \\
+         \hline
+          \textbf{Actors} & Admin \\ 
+         \hline
+          \textbf{Description} & The admin unblocks a user with given IP address. \\ 
+         \hline
+          \textbf{Data} & IP address of the user\\ 
+         \hline
+          \textbf{Preconditions} & 
+          The admin must be logged in. \newline
+          The admin must have given the "manage connections" command beforehand.\\
+         \hline
+          \textbf{Stimulus} & The admin types "unblock user" command in the admin command-line interface.\\ 
+         \hline
+          \textbf{Basic Flow} & 
+          Step 1 -- The system asks for the IP address of the user to unblock. \newline
+          Step 2 -- The admin gives the IP address of the user obtained from the list displayed after "manage connections" command. \newline
+          Step 3 -- Server reaches to the database and sets the blockStatus field of the user record with the given IP Address as "unblocked" \\
+         \hline
+          \textbf{Alternative Flow\#1} & -\\
+         \hline
+          \textbf{Alternative Flow\#2} & - \\
+         \hline
+          \textbf{Exception Flow} & If there is no blocked user with the given IP address, the system displays an error message saying that "No blocked users were found". \\
+         \hline
+          \textbf{Post Conditions} & The user with the given IP address will be able to connect to the server again. \\ 
+         \hline
+     \end{tabular}
+     \caption{Unblock User}
+     \label{tab:unblock_user}
+ \end{table}

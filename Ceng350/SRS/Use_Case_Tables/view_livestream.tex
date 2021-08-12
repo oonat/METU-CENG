@@ -1,0 +1,35 @@
+\begin{table}[H]
+     \centering
+     \begin{tabular}{|l|C|}
+         \hline
+          \textbf{Use-Case Name} & View Livestream \\
+         \hline
+          \textbf{Actors} & User, OpenFlexure Microscope \\ 
+         \hline
+          \textbf{Description} & The user views the live camera feed. \\ 
+         \hline
+          \textbf{Data} & Camera feed\\ 
+         \hline
+          \textbf{Preconditions} & 
+          User must be connected to the system. \newline
+          Camera connection must be provided. \\
+         \hline
+          \textbf{Stimulus} & The user clicks on "View" button. \\ 
+         \hline
+          \textbf{Basic Flow} & 
+          Step 1 -- The user clicks on "View" button from the side pine. \newline
+		  Step 2 -- Server reaches Raspberry Pi camera. \newline
+		  Step 3 -- Camera livestream is displayed in graphical user interface. \\
+         \hline
+          \textbf{Alternative Flow\#1} & - \\
+         \hline
+          \textbf{Alternative Flow\#2} & - \\
+         \hline
+          \textbf{Exception Flow} & If the camera connection is not established, the system displays an error message saying that "Check the camera connection".\\
+         \hline
+          \textbf{Post Conditions} & The livestream is displayed. \\ 
+         \hline
+     \end{tabular}
+     \caption{View Livestream}
+     \label{tab:view_livestream}
+ \end{table}

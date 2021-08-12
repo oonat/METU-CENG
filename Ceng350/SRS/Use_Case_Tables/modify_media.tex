@@ -1,0 +1,39 @@
+\begin{table}[H]
+     \centering
+     \begin{tabular}{|l|C|}
+         \hline
+          \textbf{Use-Case Name} & Modify Media \\
+         \hline
+          \textbf{Actors} & User \\ 
+         \hline
+          \textbf{Description} & The user modifies the saved media. \\ 
+         \hline
+          \textbf{Data} & Metadata of the saved images and recordings\\ 
+         \hline
+          \textbf{Preconditions} & 
+          User must be connected to the system. \newline
+          Gallery tab must be active \\
+         \hline
+          \textbf{Stimulus} & The user clicks on one of the media entries in the gallery. \\ 
+         \hline
+          \textbf{Basic Flow} & 
+          Step 1 --  The user clicks the media entry he/she wants to modify in the gallery. \newline
+          Step 2 -- The popup window contains metadata information of the clicked media opens. \newline
+          Step 3 -- The user changes the metadata of the media. \newline
+          Step 4 -- The user clicks on "Save" button to save the updated metadata. \newline
+          Step 5 -- The system updates the corresponding database records using the Database Management Interface. \\
+         \hline
+          \textbf{Alternative Flow\#1} &            
+          Step 3 -- The user clicks on "Delete" button. \newline
+          Step 4 -- The media is deleted from the storage location and corresponding database records is deleted from the database. \\
+         \hline
+          \textbf{Alternative Flow\#2} & -\\
+         \hline
+          \textbf{Exception Flow} & - \\
+         \hline
+          \textbf{Post Conditions} & The media is either deleted or its metadata is updated. \\ 
+         \hline
+     \end{tabular}
+     \caption{Modify Media}
+     \label{tab:modify_media}
+ \end{table}

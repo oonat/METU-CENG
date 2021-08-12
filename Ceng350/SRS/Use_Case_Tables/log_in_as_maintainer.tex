@@ -1,0 +1,35 @@
+\begin{table}[H]
+     \centering
+     \begin{tabular}{|l|C|}
+         \hline
+          \textbf{Use-Case Name} & Log in as Maintainer \\
+         \hline
+          \textbf{Actors} & Maintainer \\ 
+         \hline
+          \textbf{Description} & The maintainer connects to server with his/her login key.\\ 
+         \hline
+          \textbf{Data} & Maintainer login key\\ 
+         \hline
+          \textbf{Preconditions} & - \\
+         \hline
+          \textbf{Stimulus} & The maintainer sends login request to server from the terminal.\\ 
+         \hline
+          \textbf{Basic Flow} & 
+          Step 1 -- The server receives the login request. \newline
+          Step 2 -- The server asks for the maintainer login key. \newline
+          Step 3 -- Maintainer types his/her login key to the terminal. \newline
+          Step 4 -- The system reaches to the local database and verifies the given login key.   \newline
+          Step 5 -- The system signs in the maintainer. \\
+         \hline
+          \textbf{Alternative Flow\#1} & - \\
+         \hline
+          \textbf{Alternative Flow\#2} & - \\
+         \hline
+          \textbf{Exception Flow} & If the given key is invalid, the system displays an error message saying that "Given key is invalid". The system saves the log of the failed login attempt and the IP address of the user to the database. Then, the flow starts again from Step 2. \\
+         \hline
+          \textbf{Post Conditions} & The maintainer command-line interface opens. \\ 
+         \hline
+     \end{tabular}
+     \caption{Log in as Maintainer}
+     \label{tab:log_in_as_maintainer}
+ \end{table}

@@ -1,0 +1,35 @@
+\begin{table}[H]
+     \centering
+     \begin{tabular}{|l|C|}
+         \hline
+          \textbf{Use-Case Name} & Open Gallery \\
+         \hline
+          \textbf{Actors} & User \\ 
+         \hline
+          \textbf{Description} & The user displays the saved images and recorded videos. \\ 
+         \hline
+          \textbf{Data} & Images, recordings and metadata\\ 
+         \hline
+          \textbf{Preconditions} & 
+          User must be connected to the system. \\
+         \hline
+          \textbf{Stimulus} & The user clicks on "Gallery" button \\ 
+         \hline
+          \textbf{Basic Flow} & 
+          Step 1 -- The user clicks on "Gallery" button from the side pane. \newline
+          Step 2 -- The server reaches to the database and retrieves the media records with the user's IP address in the authorIPAddress field.
+          \newline
+          Step 3 -- The system displays a list of images and recordings in a new tab as a grid style gallery where each entry has thumbnail and metadata of the corresponding media. \\
+         \hline
+          \textbf{Alternative Flow\#1} &  - \\ 
+         \hline
+          \textbf{Alternative Flow\#2} & -\\
+         \hline
+          \textbf{Exception Flow} & If there is no saved media associated with the user, the system displays a message saying that "No saved media were found."\\
+         \hline
+          \textbf{Post Conditions} & The user views the media saved by him/her. \\ 
+         \hline
+     \end{tabular}
+     \caption{Open Gallery}
+     \label{tab:open_gallery}
+ \end{table}

@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{hyperref}
+\usepackage{float}
+
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\usepackage{tabularx}
+\usepackage{srs}
+
+\usepackage[numbib]{tocbibind}
+\setcounter{tocdepth}{4} 
+\setcounter{secnumdepth}{4}
+
+\begin{document}
+	\begin{titlepage}
+		\newcommand{\HRule}{\rule{\linewidth}{0.1mm}} 
+		\center 
+		\includegraphics[scale=0.12]{ceng} \\[1cm]
+		\HRule \\[0.5cm]
+		{ \huge Software Requirements Specification }\\[0.4cm]
+		{\Large OpenFlexure Microscope} \\
+		
+		\HRule \\[2cm]
+		
+				
+		{\large Onat ÖZDEMİR - 2310399} \\
+
+	\end{titlepage}
+	
+	\begingroup
+	\hypersetup{hidelinks}
+	\tableofcontents
+	\newpage
+	\listoffigures
+	\newpage
+	\listoftables
+	\newpage
+	\endgroup
+	
+	
+	\section*{Revision History}
+	\input{sections/revision_history.tex}
+	\newpage
+	
+	\section{Introduction}
+	\input{sections/Introduction/main.tex}
+
+	\begin{thebibliography}{2}
+	\bibitem{local} https://openflexure.gitlab.io/microscope-handbook/learn-about-the-project/local-manufacturing.html
+	\bibitem{education}
+	https://openflexure.gitlab.io/microscope-handbook/learn-about-the-project/teaching.html
+	\end{thebibliography}
+
+	\newpage
+	
+	\section{Specific Requirements}
+	\input{sections/Specific_Requirements/main.tex}
+	
+	
+	
+\end{document}

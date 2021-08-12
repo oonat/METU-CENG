@@ -1,0 +1,36 @@
+\begin{table}[H]
+     \centering
+     \begin{tabular}{|l|C|}
+         \hline
+          \textbf{Use-Case Name} & Update Software \\
+         \hline
+          \textbf{Actors} & Maintainer, OpenFlexure Development Server \\ 
+         \hline
+          \textbf{Description} & The maintainer updates the system software.\\ 
+         \hline
+          \textbf{Data} & Installable update package\\ 
+         \hline
+          \textbf{Preconditions} & 
+          Maintainer must be logged in. \newline
+          Maintainer must have given the "check updates" command beforehand.\\
+         \hline
+          \textbf{Stimulus} & The maintainer gives "update" command using the command line interface.\\ 
+         \hline
+          \textbf{Basic Flow} & 
+          Step 1 -- The server requests the update package from the "OpenFlexure Development Server". \newline
+          Step 2 -- The package is downloaded to the Raspberry Pi. \newline
+          Step 3 -- The server installs the downloaded package. \newline
+          Step 4 -- The server saves the version number and the release date of the update to the corresponding database table. \\
+         \hline
+          \textbf{Alternative Flow\#1} & - \\
+         \hline
+          \textbf{Alternative Flow\#2} & - \\
+         \hline
+          \textbf{Exception Flow} & If an error is encountered during the installation, for example, if the downloaded package is corrupted, the system saves the detailed error log into the database. \\
+         \hline
+          \textbf{Post Conditions} & The system is updated to the latest version. \\ 
+         \hline
+     \end{tabular}
+     \caption{Update Software}
+     \label{tab:update_software}
+ \end{table}

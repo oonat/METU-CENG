@@ -1,0 +1,36 @@
+\begin{table}[H]
+     \centering
+     \begin{tabular}{|l|C|}
+         \hline
+          \textbf{Use-Case Name} & Navigate Stage \\
+         \hline
+          \textbf{Actors} & User, OpenFlexure Microscope \\ 
+         \hline
+          \textbf{Description} & The user adjusts the position of the stage. \\ 
+         \hline
+          \textbf{Data} & Coordinates of the stage in x, y and z axes\\ 
+         \hline
+          \textbf{Preconditions} & 
+          User must be connected to the system. \\
+         \hline
+          \textbf{Stimulus} & The user clicks on "Navigate" button.\\ 
+         \hline
+          \textbf{Basic Flow} & 
+          Step 1 -- The user clicks on "Navigate" button from the side pane. \newline
+          Step 2 -- Tab that contains live camera feed and navigation menu opens. \newline
+          Step 3 -- The user chooses the new x, y and z coordinates by filling the three textboxes placed in navigation menu. \newline
+		  Step 4 -- The user clicks on "Apply" button. \newline
+		  Step 5 -- The system sends the given coordinates to the "Motor Controller" \\
+         \hline
+          \textbf{Alternative Flow\#1} & - \\
+         \hline
+          \textbf{Alternative Flow\#2} & - \\
+         \hline
+          \textbf{Exception Flow} & If the motor connection is not established, the system displays an error message saying that "Check the motor connection".\\
+         \hline
+          \textbf{Post Conditions} & The position of the stage is physically changed. \\ 
+         \hline
+     \end{tabular}
+     \caption{Navigate Stage}
+     \label{tab:navigate_stage}
+ \end{table}

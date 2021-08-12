@@ -1,0 +1,43 @@
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|C|}
+		\hline
+		\textbf{Use-Case Name} & Scan \\
+		\hline
+		\textbf{Actors} & User, OpenFlexure Microscope \\ 
+		\hline
+		\textbf{Description} & The system generates a scan of the area bounded by the coordinates provided by the user.\\ 
+		\hline
+		\textbf{Data} & Generated scan\\ 
+		\hline
+		\textbf{Preconditions} & 
+		The user must be connected to the system. \newline
+		Camera connection must be provided. \newline
+		Capture tab must be opened. \\ 
+		\hline
+		\textbf{Stimulus} & The user clicks on "Scan" button.\\ 
+		\hline
+		\textbf{Basic Flow} & 
+		Step 1 -- The user opens "Capture" tab from the side pane. \newline
+		Step 2 -- The user activates "Scan" option by clicking the option box placed in image settings menu. \newline
+		Step 3 -- The textboxes showing the coordinates that define the boundary of the area to be scanned becomes available. \newline
+		Step 4 -- The user types the coordinates to the textboxes. \newline
+		Step 5 -- Until the entire area has been scanned, at each step, the system sends a command to the "Motor Control System" to move by the step size specified in system settings and to the "Camera System" to capture the current image. \newline
+		Step 6 -- The system merges all captured images to generate a bigger image of the area and displays it in a popup window. \newline
+        Step 7 -- The user gives a name to the generated scan. \newline
+		Step 8 -- The user clicks on "Save" button to save the generated scan. \newline
+		Step 9 -- The system saves the scan image to the location specified in system settings and create database record for the image using the Database Management Interface. \\
+		\hline
+		\textbf{Alternative Flow\#1} & 
+		Step 7 -- The user clicks on the "Exit" button to exit without saving the scan. \\
+		\hline
+		\textbf{Alternative Flow\#2} & - \\
+		\hline
+		\textbf{Exception Flow} & If the user tries to save the scan without naming it, the system displays an error message. If there is no available storage, the system displays an error message.\\
+		\hline
+		\textbf{Post Conditions} & The scan is saved to the location specified in the system settings. \\ 
+		\hline
+	\end{tabular}
+	\caption{Scan}
+	\label{tab:scan}
+\end{table}

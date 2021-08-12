@@ -1,0 +1,35 @@
+\begin{table}[H]
+     \centering
+     \begin{tabular}{|l|C|}
+         \hline
+          \textbf{Use-Case Name} & Check Updates \\
+         \hline
+          \textbf{Actors} & Maintainer, OpenFlexure Development Server \\ 
+         \hline
+          \textbf{Description} & The maintainer checks for the software updates.\\ 
+         \hline
+          \textbf{Data} & System's current software version, released update information\\
+         \hline
+          \textbf{Preconditions} & 
+          Maintainer must be logged in. \\
+         \hline
+          \textbf{Stimulus} & The maintainer gives "check updates" command using the command line interface.\\ 
+         \hline
+          \textbf{Basic Flow} & 
+          Step 1 -- The server retrieves the version number of the software from the database. \newline
+          Step 2 -- The server sends the current version number of the software to the OpenFlexure Development Server. \newline
+          Step 3 -- The server receives the information about the latest update returned by the OpenFlexure Development Server. \newline
+          Step 4 -- The server displays the version number, size, release date and changelog of the update in command-line interface. \\
+         \hline
+          \textbf{Alternative Flow\#1} & - \\
+         \hline
+          \textbf{Alternative Flow\#2} & - \\
+         \hline
+          \textbf{Exception Flow} & If the system is already using the latest version, an error message saying that "No updates were found" is displayed. \\
+         \hline
+          \textbf{Post Conditions} & Information about the latest update is displayed in the command-line interface. \\ 
+         \hline
+     \end{tabular}
+     \caption{Check Updates}
+     \label{tab:check_updates}
+ \end{table}

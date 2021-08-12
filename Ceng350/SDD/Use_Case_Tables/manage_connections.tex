@@ -1,0 +1,33 @@
+\begin{table}[H]
+     \centering
+     \begin{tabular}{|l|C|}
+         \hline
+          \textbf{Use-Case Name} & Manage Connections \\
+         \hline
+          \textbf{Actors} & Admin \\ 
+         \hline
+          \textbf{Description} & The admin views the list of connected and blocked users. \\ 
+         \hline
+          \textbf{Data} & IP addresses, types (user, maintainer or admin) and the statuses (connected, blocked) of the users. \\
+         \hline
+          \textbf{Preconditions} & 
+          The admin must be logged in. \\
+         \hline
+          \textbf{Stimulus} & The admin gives "manage connections" command using the admin command-line interface.\\ 
+         \hline
+          \textbf{Basic Flow} & 
+          Step 1 -- The system reaches to the database and gathers records of the connected and blocked users. \newline
+          Step 2 -- The system displays the list of IP addresses, connection times and the statuses (connected, blocked) of the users. \\
+         \hline
+          \textbf{Alternative Flow\#1} & -\\
+         \hline
+          \textbf{Alternative Flow\#2} & - \\
+         \hline
+          \textbf{Exception Flow} & If there is no connected or blocked user, the system displays an error message saying that "No data were found".\\
+         \hline
+          \textbf{Post Conditions} & The admin views the connected and blocked users. \\ 
+         \hline
+     \end{tabular}
+     \caption{Manage Connections}
+     \label{tab:manage_connections}
+ \end{table}

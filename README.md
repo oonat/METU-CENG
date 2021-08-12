@@ -19,4 +19,10 @@ Solutions of homework given in the Department of Computer Engineering
 
 ### [CENG331 - Computer Organization](https://github.com/oonat/METU-CENG/tree/master/Ceng331)
 
+### [CENG334 - Introduction to Operating Systems](https://github.com/oonat/METU-CENG/tree/master/Ceng334)
+
+### [CENG336 - Introduction to Embedded Systems Development](https://github.com/oonat/METU-CENG/tree/master/Ceng336)
+
+### [CENG350 - Software Engineering](https://github.com/oonat/METU-CENG/tree/master/Ceng350)
+
 ### [CENG351 - Data Management and File Structures](https://github.com/oonat/METU-CENG/tree/master/Ceng351)
